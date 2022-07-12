@@ -1,6 +1,6 @@
 package com.example.smartalbum.exception.hander;
 
-import com.chinamobile.cmss.sdk.ECloudServerException;
+import com.chinamobile.cmss.sdk.image.ECloudServerException;
 import com.example.smartalbum.util.ResponseMsgUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileExistsException;

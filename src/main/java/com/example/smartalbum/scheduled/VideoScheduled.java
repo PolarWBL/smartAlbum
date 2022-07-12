@@ -63,7 +63,7 @@ public class VideoScheduled {
     /**
      * 初始运行项目24小时后开始执行，上一次执行完毕时间点之后24小时后再执行（每天执行一次）
      */
-    @Scheduled(initialDelay = 1000 * 60 * 60 * 3, fixedDelay = 1000 * 60 * 60 * 3)
+    @Scheduled(initialDelay = 1000 * 60, fixedDelay = 1000 * 60 * 60 * 2)
     public void createVideo() throws IOException {
 
         log.info("开始生成精彩时刻视频");
@@ -137,10 +137,13 @@ public class VideoScheduled {
                     if (deleteDir(deleteDir)) {
                         log.info("清除临时数据成功！");
                     }
+                    log.info("生成精彩时刻视频结束");
+                    return;
                 } else {
                     log.info("用户仓库 {} 中的相册 {} 不满足生成条件，已结束生成", imageSet.getDepositoryId(), imageSet.getName());
                 }
             }
+
         }
         log.info("生成精彩时刻视频结束");
     }

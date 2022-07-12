@@ -28,6 +28,7 @@ public class VideoUtil {
      * @throws InterruptedException 等待子线程完成任务的过程中，子线程被中断时发生异常
      */
     public void createMp4(String inputPath, String outputPath) throws IOException, InterruptedException {
+        System.out.println("======进入了createMp4方法======");
         File[] files = new File(inputPath).listFiles();
         if (files != null) {
             //图片转化为视频
@@ -39,6 +40,7 @@ public class VideoUtil {
                 img = files[i].getAbsolutePath();
                 outputVideo = outputPath + i + ".ts";
                 command = fFmpegCommandUtil.createFadeVideo(img, outputVideo);
+//                processes.add(Runtime.getRuntime().exec(command));
                 processes.add(Runtime.getRuntime().exec(new String[]{"bash", "-c",command}));
             }
 
@@ -53,6 +55,7 @@ public class VideoUtil {
             }
 
         }
+        System.out.println("======退出了createMp4方法======");
     }
 
     /**
@@ -62,6 +65,7 @@ public class VideoUtil {
      * @throws IOException 执行命令行命令时或者关闭流时发生的异常
      */
     public void createMargeTxt(String outputPath) throws IOException {
+        System.out.println("======进入了createMargeTxt方法======");
         //生成的待合成视频数组
         File[] videos = new File(outputPath).listFiles();
         if (videos != null) {
@@ -87,6 +91,7 @@ public class VideoUtil {
                 writer.write(String.valueOf(margeTxt));
             }
         }
+        System.out.println("======退出了createMargeTxt方法======");
     }
 
     /**
@@ -97,16 +102,18 @@ public class VideoUtil {
      * @throws InterruptedException 等待子线程完成任务的过程中，子线程被中断时发生异常
      */
     public void mergeVideo(String outputPath) throws InterruptedException, IOException {
-
+        System.out.println("======进入了mergeVideo方法======");
         String margeTxt = outputPath + "marge.txt";
         String outputVideo = outputPath + "out.mp4";
         String command = fFmpegCommandUtil.mergeVideo(margeTxt, outputVideo);
 
         Process exec = Runtime.getRuntime().exec(command);
+//        Process exec = Runtime.getRuntime().exec(new String[]{"bash", "-c",command});
+        System.out.println(exec.getErrorStream().toString());
         exec.getErrorStream().close();
         exec.getInputStream().close();
         exec.getOutputStream().close();
         exec.waitFor();
-
+        System.out.println("======退出了mergeVideo方法======");
     }
 }
