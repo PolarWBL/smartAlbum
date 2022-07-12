@@ -2,8 +2,8 @@ app:
   # 每个用户空间默认最大容量，单位b，默认500m
   maxDepositorySize: 524288000
   # 工作文件夹，所有程序生成的本地文件都会放在这
-#  workingFolder: D:/smartAlbum
-  workingFolder: /www/wwwroot
+  workingFolder: D:/smartAlbum
+#  workingFolder: /www/wwwroot C:\Users\86199\Desktop\smartAlbum
   # ffmpeg.exe的存放路径,默认放在工作文件夹下
 #  ffmpegPath: ${app.workingFolder}/ffmpeg.exe
   ffmpegPath: ${app.workingFolder}/ffmpeg/ffmpeg
@@ -39,8 +39,8 @@ spring:
 
   datasource:
     username: root
-    password: 6b449eb908864fd8
-#    password: 123456
+#    password: 6b449eb908864fd8
+    password: root
     url: jdbc:mysql://localhost:3306/smartAlbum?serverTimezone=GMT%2B8
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
