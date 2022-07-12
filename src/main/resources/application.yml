@@ -2,11 +2,11 @@ app:
   # 每个用户空间默认最大容量，单位b，默认500m
   maxDepositorySize: 524288000
   # 工作文件夹，所有程序生成的本地文件都会放在这
-  workingFolder: D:/smartAlbum
-#  workingFolder: /www/wwwroot
+#  workingFolder: D:/smartAlbum
+  workingFolder: /www/wwwroot
   # ffmpeg.exe的存放路径,默认放在工作文件夹下
-  ffmpegPath: ${app.workingFolder}/ffmpeg.exe
-#  ffmpegPath: ${app.workingFolder}/ffmpeg/ffmpeg
+#  ffmpegPath: ${app.workingFolder}/ffmpeg.exe
+  ffmpegPath: ${app.workingFolder}/ffmpeg/ffmpeg
   # 精彩时刻的工作路径
   # 生成的精彩时刻视频完整路径如下
   # 工作文件夹/{程序会自动生成的用户文件夹名字}/{程序会自动生成相册id}/video/out.mp4
@@ -39,8 +39,8 @@ spring:
 
   datasource:
     username: root
-#    password: 6b449eb908864fd8
-    password: 123456
+    password: 6b449eb908864fd8
+#    password: 123456
     url: jdbc:mysql://localhost:3306/smartAlbum?serverTimezone=GMT%2B8
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
@@ -93,6 +93,7 @@ spring:
   mail:
     username: wengboliang0099@qq.com
     password: rqbiwmotwspwbehb
+#    password: kbzdfrfkzsbqbbdf #朱逸轩服务器邮箱密码
     host: smtp.qq.com
 
 #日志输出配置(没有路径文件夹则自动创建)

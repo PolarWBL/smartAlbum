@@ -10,7 +10,7 @@
   </parent>
   <groupId>com.example</groupId>
   <artifactId>smartAlbum</artifactId>
-  <version>1.7</version>
+  <version>1.8</version>
   <name>smartAlbum</name>
   <description>智能云相册</description>
   <properties>
@@ -81,7 +81,7 @@
     <dependency>
       <groupId>com.alibaba</groupId>
       <artifactId>druid-spring-boot-starter</artifactId>
-      <version>1.2.6</version>
+      <version>1.2.5</version>
     </dependency>
 
     <!--图片操作-->
@@ -103,9 +103,9 @@
     <dependency>
       <groupId>com.chinamobile</groupId>
       <artifactId>cmss</artifactId>
-      <version>1.0.0</version>
+      <version>1.1.0</version>
       <scope>system</scope>
-      <systemPath>${project.basedir}/src/main/resources/lib/ecloud-engine-sdk-1.0.0.jar</systemPath>
+      <systemPath>${pom.basedir}/src/main/resources/lib/ecloud-engine-sdk-1.1.0-jar-with-dependencies.jar</systemPath>
     </dependency>
 
     <!-- 分页插件 -->
@@ -139,6 +139,7 @@
         </configuration>
       </plugin>
     </plugins>
+
   </build>
 
 

@@ -17,7 +17,9 @@ public class FFmpegCommandUtil {
      * 根据ts文件合并多个视频
      */
     public String mergeVideo(String txtPath, String outPath) {
-        return ffmpeg + " -f concat -safe 0 -i " + txtPath + " -c copy " + outPath;
+        String command = ffmpeg + " -f concat -safe 0 -i " + txtPath + " -c copy " + outPath;
+        System.out.println("======" + command + "======");
+        return command;
     }
 
     /**

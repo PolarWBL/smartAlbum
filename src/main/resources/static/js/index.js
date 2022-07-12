@@ -8,8 +8,9 @@ let bg = document.getElementById("loginleft");
 let wangji = document.getElementById("wangji");
 let rwenzi = document.getElementById("register_wenzi");
 let register = document.getElementById("register");
-
-
+let username = document.getElementById("username");
+let rememberP = document.getElementById("rem");
+let password = document.getElementById("password");
 
 //屏蔽tab
 document.onkeydown = onkeydownTab;
@@ -18,26 +19,6 @@ function onkeydownTab() {
         return false;
     }
 }
-
-var ipt =document.querySelector('#username')
-var rem_P=document.querySelector('#rem')
-var password=document.querySelector('#password')
-if (localStorage.getItem('ipt')){
-    ipt.value = (localStorage.getItem('ipt'))
-}
-if (localStorage.getItem('password')){
-    password.value=(localStorage.getItem('password'))
-    rem_P.checked=true
-}
-localStorage.setItem('ipt',ipt.value)
-rem_P.addEventListener('change',function () {
-    if (!this.checked){
-        localStorage.removeItem('password')
-    }
-})
-
-
-
 
 //添加enter事件
 document.getElementById("username").onkeydown = keyListener;
@@ -55,11 +36,19 @@ function keyListener(e) {
 }
 
 document.getElementById("login").addEventListener("click", function () {
-    if (rem_P.checked) {
-        console.log("======记住了密码======");
+    if (rememberP.checked) {
+        console.log("======记住了用户名和密码======");
         localStorage.setItem('password', password.value);
+        localStorage.setItem('username',username.value)
     }
 });
+
+rememberP.addEventListener('change',function () {
+    if (!this.checked){
+        localStorage.removeItem('username')
+        localStorage.removeItem('password')
+    }
+})
 
 //验证账号
 nextbut.addEventListener("click", function () {
@@ -123,6 +112,11 @@ fanhui.onclick = function () {
 //登录
 function toLogin() {
     console.log("进入了toLogin方法");
+    if (username.value === localStorage.getItem('username')){
+        console.log("===保存的用户名与输入的一致===")
+        password.value=(localStorage.getItem('password'))
+        rememberP.checked=true
+    }
     document.getElementById("password").onkeydown = keyListener;
     let className = document.querySelectorAll(".login")[1].getAttribute("class");
     if (className.search("flag2") === -1) {
