@@ -432,19 +432,32 @@ function downloadFile() {
         valArray.push(val);
     })
     console.log(valArray);
-    if (valArray.length == 0) {
+    if (valArray.length === 0) {
         alert("请选择你要下载的图片哦~");
     }
-    //循环遍历 下载文件
-    for (let i = 0; i < valArray.length; i++) {
-        let a = document.createElement('a') // 创建a标签
-        let e = document.createEvent('MouseEvents') // 创建鼠标事件对象
-        e.initEvent('click', false, false) // 初始化事件对象
-        a.href = " /file/download" // 设置下载地址
-        a.download = valArray[i] // 设置下载文件名
-        a.dispatchEvent(e)
+    for (let i = 0; i < valArray.length; i++){
+        const iframe = document.createElement("iframe");
+        iframe.style.display = "none"; // 防止影响页面
+        iframe.style.height = 0; // 防止影响页面
+        iframe.src = "/file/download?filename=" + valArray[i];
+        document.body.appendChild(iframe); // 这一行必须，iframe挂在到dom树上才会发请求
+        // 5分钟之后删除（onload方法对于下载链接不起作用，就先抠脚一下吧）
+        setTimeout(()=>{
+            iframe.remove();
+        }, 5 * 60 * 1000);
     }
+    // //循环遍历 下载文件
+    // for (let i = 0; i < valArray.length; i++) {
+    //     console.log("批量下载的文件名: " + valArray[i]);
+    //     let a = document.createElement('a') // 创建a标签
+    //     let e = document.createEvent('MouseEvents') // 创建鼠标事件对象
+    //     e.initEvent('click', false, false) // 初始化事件对象
+    //     a.href = "/file/download?filename=" + valArray[i]; // 设置下载文件名
+    //     a.dispatchEvent(e)
+    // }
 }
+
+
 
 function download(filename) {
     get("/file/download", {"filename": filename});
