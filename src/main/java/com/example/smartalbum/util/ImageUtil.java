@@ -32,7 +32,7 @@ public class ImageUtil {
      */
     public boolean checkImage(String fileName) {
         String suf = fileName.substring(fileName.indexOf('.') + 1);
-        String[] types = {"jpg", "png", "jpeg","jfif" , "tif", "bmp", "gif", "svg", "psd", "ai", "raw", "wmf"};
+        String[] types = {"jpg", "png", "jpeg", "bmp"};
         for (String s : types) {
             if (s.equalsIgnoreCase(suf)) {
                 return true;
