@@ -111,7 +111,7 @@ mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.example.smartalbum.domain
 #  configuration:
-#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#  log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 # 分页配置
 pagehelper:
