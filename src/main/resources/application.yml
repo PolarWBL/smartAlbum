@@ -3,10 +3,10 @@ app:
   maxDepositorySize: 524288000
   # 工作文件夹，所有程序生成的本地文件都会放在这
   workingFolder: D:/smartAlbum
-#  workingFolder: /www/wwwroot
+
   # ffmpeg.exe的存放路径,默认放在工作文件夹下
   ffmpegPath: ${app.workingFolder}/ffmpeg.exe
-#  ffmpegPath: ${app.workingFolder}/ffmpeg/ffmpeg
+
   # 精彩时刻的工作路径
   # 生成的精彩时刻视频完整路径如下
   # 工作文件夹/{程序会自动生成的用户文件夹名字}/{程序会自动生成相册id}/video/out.mp4
@@ -15,18 +15,18 @@ app:
 # 移动云相关服务配置信息
 ecloud:
   #  只存放原图
-  bucketName: original-image
+  bucketName:
   #  用来存放用户的其它资源（相册背景图片/精彩时刻视频/图片缩略图等）
-  bucketName2: other-image
+  bucketName2:
 
   #  OSS服务的ak、sk和地区
-  ossAccessKey: D7KZ81CGN11EJV6O5GZB
-  ossSecretKey: 8xoOJc4bNRnwS9NSug3YVASvu77utYUfZc1oW46S
-  ossEndPoint: eos-wuxi-1.cmecloud.cn
+  ossAccessKey:
+  ossSecretKey:
+  ossEndPoint:
 
   #  云API的ak和sk
-  ecloudAccessKey: d02a1ad1834644dc92af63e26116067e
-  ecloudSecretKey: 193557a432954e8abd477f92eafa36ef
+  ecloudAccessKey:
+  ecloudSecretKey:
 
   # 在此目录下存放用户的资源(相册的默认背景图片和视频)
   # 相册默认背景图片存放路径示例  {bucketName}/{resources}/albumBackground/
@@ -39,7 +39,6 @@ spring:
 
   datasource:
     username: root
-#    password: 6b449eb908864fd8
     password: 123456
     url: jdbc:mysql://localhost:3306/smartAlbum?serverTimezone=GMT%2B8
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -91,9 +90,8 @@ spring:
 
   #邮箱连接配置(注册账号时用到)
   mail:
-    username: wengboliang0099@qq.com
-    password: rqbiwmotwspwbehb
-#    password: kbzdfrfkzsbqbbdf #朱逸轩服务器邮箱密码
+    username:
+    password:
     host: smtp.qq.com
 
 #日志输出配置(没有路径文件夹则自动创建)
