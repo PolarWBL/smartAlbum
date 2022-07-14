@@ -57,6 +57,7 @@ public class MailService {
         Mail email = new Mail();
         email.setMailName(mail);
         email.setMailCode(emailCode);
+        mailDataService.delete(email.getMailName());
         mailDataService.insertSelective(email);
     }
 
