@@ -182,3 +182,154 @@ wangji.onclick = function toReset(e){
     toRegister();
 
 }
+
+//表单非空验证
+//用户名
+function checkRegisterUserName(){
+    let name = document.getElementById('register_username');
+    let nameCheck = document.getElementById('nameCheck');
+    return checkUserName(name, nameCheck,true);
+}
+function checkLoginUserName(){
+    let name = document.getElementById('username');
+    let nameCheck = document.getElementById('loginUsername');
+    return checkUserName(name, nameCheck,false);
+}
+
+
+function checkUserName(name, nameCheck, isRegister) {
+    if (name.value.length === 0) {
+        nameCheck.innerText ="请输入用户名";
+        nameCheck.style.color = "red";
+        return false;
+    }else {
+        name = name.value.trim();
+        let reg = /^[\dA-Za-z_]{7,14}$/;
+        if (!reg.test(name) && isRegister) {
+            nameCheck.innerText ="用户名长度为7~14个字符，且不能有中文";
+            nameCheck.style.color = "red";
+            return false;
+        }
+        if (isRegister) {
+            nameCheck.innerText ="用户名";
+        }else {
+            nameCheck.innerText ="用户名/电子邮箱";
+        }
+        nameCheck.style.color = "#999";
+        return true;
+    }
+}
+
+function checkRegisterPWD(){
+    let pwd = document.getElementById('register_password');
+    let pwdCheck = document.getElementById('reg_pwd');
+    return checkPWD(pwd, pwdCheck, true);
+}
+function checkLoginPWD(){
+    let pwd = document.getElementById('password');
+    let pwdCheck = document.getElementById('login_PWD');
+    return checkPWD(pwd,pwdCheck,false);
+}
+
+//密码
+function checkPWD(pwd,pwdCheck,isRegister) {
+    let title = document.getElementById("register_wenzi").innerText;
+    console.log(title);
+    if (pwd.value.length === 0) {
+        pwdCheck.innerText ="请输入登录密码";
+        pwdCheck.style.color = "red";
+        return false;
+    } else {
+        pwd = pwd.value.trim();
+        let reg = /(?!.*\s)(?!^[\u4e00-\u9fa5]+$)(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^.{8,14}$/;
+        if (!reg.test(pwd) && isRegister) {
+            pwdCheck.innerText ="密码长度为8~14个字符，字母和符号至少包含1种且不能有空格";
+            pwdCheck.style.color = "red";
+            return false;
+        }
+        pwdCheck.innerText = "密码";
+        if (title === "重置密码") {
+            pwdCheck.innerText = "新密码";
+        }
+        pwdCheck.style.color = "#999";
+        return true;
+    }
+}
+
+//邮箱
+function checkMail() {
+    let mail = document.getElementById('register_mail');
+    let mailCheck = document.getElementById('checkMail');
+    if (mail.value.length === 0) {
+        mailCheck.innerText ="请输入邮箱";
+        mailCheck.style.color = "red";
+        return false;
+    } else {
+        mail = mail.value.trim();
+        let reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
+        if (!reg.test(mail)) {
+            mailCheck.innerText ="请输入正确的邮箱";
+            mailCheck.style.color = "red";
+            return false;
+        }
+        mailCheck.innerText = "电子邮箱";
+        mailCheck.style.color = "#999";
+        return true;
+    }
+}
+
+//
+// //重复密码
+// function checkRpwd() {
+//     let pwd = document.getElementById('password');
+//     let rpwd = document.getElementById('check-password');
+//     if (pwd.value != rpwd.value) {
+//         document.getElementById('checkpwdspan').innerText="两次密码不一致!";
+//         return false;
+//     }
+//     document.getElementById('checkpwdspan').innerText ="";
+//     return true;
+// }
+
+//验证码
+function checkVerifyCode() {
+    let verifyCode = document.getElementById('code');
+    let codeCheck = document.getElementById('checkCode');
+    if (verifyCode.value.length === 0) {
+        codeCheck.innerText = "请输入5位验证码";
+        codeCheck.style.color="red";
+        return false;
+    }else {
+        verifyCode = verifyCode.value.trim();
+        let reg = /^[\dA-Za-z]{5}$/;
+        if (!reg.test(verifyCode)) {
+            codeCheck.innerText ="请输入5位验证码";
+            codeCheck.style.color = "red";
+            return false;
+        }
+        codeCheck.innerText ="验证码";
+        codeCheck.style.color="#999";
+        return true;
+    }
+}
+
+//
+//
+
+//注册按钮
+function checkRegisterAll(){
+    let username = checkRegisterUserName(),
+        pwd =  checkRegisterPWD(),
+        mail = checkMail(),
+        verifyCode = checkVerifyCode()
+    register = document.getElementById('register');
+    if (username && pwd && verifyCode && mail) {
+        console.log("检查通过");
+        register.style.backgroundColor = "rgb(3,169,245)";
+        return true;
+    } else {
+        console.log("检查不通过");
+        register.style.backgroundColor ="#BDCEFC";
+        return false;
+    }
+}
