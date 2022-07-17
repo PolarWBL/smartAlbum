@@ -59,7 +59,7 @@
               aria-hidden="true">&times;</span></button>
         </div>
         <div class="modal-body">
-          <p>是否删除以下文件</p>
+          <p>是否将以下文件移入回收站</p>
           <p id="deleteFileName" class="text"></p>
         </div>
         <form id="deleteForm" method="post">
@@ -69,7 +69,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal" id="deleteCancel">取消</button>
-            <button type="button" class="btn btn-primary" onclick="deleteSuccess()">确定</button>
+            <button type="button" class="btn btn-primary" onclick="moveToBin()">确定</button>
           </div>
         </form>
       </div>
@@ -142,6 +142,7 @@
                 <span style="margin-left: 5px" th:text="${percentage}"></span>%
                 <span style="margin-left: 20px">总容量:</span>
                 <span style="margin-left: 5px" th:text="${maxSize}"></span>MB
+                </li>
               </ol>
             </div>
 
@@ -218,7 +219,6 @@
   <div class="tool-items btn-toolbar-dark" id="album_menu">
     <a href="#" class="tool-item" id="toolItems-down" title="下载"><i class="fa fa-download"></i></a>
     <a href="#" class="tool-item" id="toolItems-star" title="收藏"><i class="fa fa-star"></i></a>
-    <a href="#" class="tool-item" id="toolItems-share" title="分享"><i class="fa fa-share"></i></a>
     <a href="#myModal" class="tool-item" id="toolItems-trash" title="删除" data-toggle='modal'><i class="fa fa-trash"></i></a>
     <a href="#" class="tool-item" id="toolItems-times-circle" title="取消多选"><i class="fa fa-times-circle"></i></a>
   </div>

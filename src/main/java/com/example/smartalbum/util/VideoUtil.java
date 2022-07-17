@@ -107,8 +107,8 @@ public class VideoUtil {
         String outputVideo = outputPath + "out.mp4";
         String command = fFmpegCommandUtil.mergeVideo(margeTxt, outputVideo);
 
-        Process exec = Runtime.getRuntime().exec(command);
-//        Process exec = Runtime.getRuntime().exec(new String[]{"bash", "-c",command});
+//        Process exec = Runtime.getRuntime().exec(command);
+        Process exec = Runtime.getRuntime().exec(new String[]{"bash", "-c",command});
         System.out.println(exec.getErrorStream().toString());
         exec.getErrorStream().close();
         exec.getInputStream().close();

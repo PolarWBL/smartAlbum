@@ -4,6 +4,7 @@ import com.example.smartalbum.domain.Image;
 import com.example.smartalbum.domain.User;
 import com.example.smartalbum.exception.FileOperationException;
 import com.example.smartalbum.service.OssService;
+import com.example.smartalbum.service.RubbishService;
 import com.example.smartalbum.service.UpdateService;
 import com.example.smartalbum.service.database.ImageDataService;
 import com.example.smartalbum.util.ResponseMsgUtil;
@@ -36,6 +37,8 @@ public class FileController {
     private ImageDataService imageDataService;
     @Resource
     private UpdateService updateService;
+    @Resource
+    private RubbishService rubbishService;
 
     /**
      * 创建固定数量可重用线程池
@@ -89,6 +92,7 @@ public class FileController {
         CountDownLatch countDownLatch = new CountDownLatch(filenames.length);
         List<String> names = new ArrayList<>();
         for (String filename : filenames) {
+            names.add(filename);
             executorService.execute(()->{
                 boolean result = imageDataService.deleteImage(depositoryId, filename)
                 && ossService.deleteFile(depositoryName + "/" + filename, true);
@@ -105,6 +109,50 @@ public class FileController {
         }
         updateService.updateUserInfo(session);
         return ResponseMsgUtil.success("成功删除以下文件", names);
+    }
+
+    /**
+     * 批量删除文件
+     *
+     * @param filenames 文件名字数组
+     */
+    @PostMapping("/moveToRubbish")
+    public String moveToRubbish(@RequestParam("filenames") String[] filenames,
+                             HttpSession session){
+        if (filenames.length <= 0) {
+            throw new FileOperationException("请选择要移入回收站的文件！");
+        }
+        List<String> names = new ArrayList<>();
+        for (String filename : filenames) {
+            names.add(filename);
+            boolean result = rubbishService.setImageToRubbish(filename, session);
+            if (!result){
+                log.error("将 {} 移入回收站时失败！",filename);
+            }
+        }
+        return ResponseMsgUtil.success("成功将以下文件移入回收站", names);
+    }
+
+    /**
+     * 批量恢复已经删除的文件
+     *
+     * @param filenames 文件名字数组
+     */
+    @PostMapping("/setImageToNormal")
+    public String setImageToNormal(@RequestParam("filenames") String[] filenames,
+                                HttpSession session){
+        if (filenames.length <= 0) {
+            throw new FileOperationException("请选择要恢复的文件！");
+        }
+        List<String> names = new ArrayList<>();
+        for (String filename : filenames) {
+            names.add(filename);
+            boolean result = rubbishService.setImageToNormal(filename, session);
+            if (!result){
+                log.error("将 {} 恢复时失败！",filename);
+            }
+        }
+        return ResponseMsgUtil.success("成功将以下文件恢复", names);
     }
 
     /**
@@ -139,6 +187,19 @@ public class FileController {
         int depositoryId = user.getDepository().getId();
 
         List<Image> imageList = imageDataService.getSimpleImages(depositoryId);
+
+        return ResponseMsgUtil.success(imageList);
+    }
+
+    /**
+     * 获取当前用户的所有回收站的图片文件
+     */
+    @GetMapping("/bin")
+    public String getBinImageList(HttpSession session) {
+        User user = (User) session.getAttribute("userInfo");
+        int depositoryId = user.getDepository().getId();
+
+        List<Image> imageList = imageDataService.getRecycleImages(depositoryId);
 
         return ResponseMsgUtil.success(imageList);
     }

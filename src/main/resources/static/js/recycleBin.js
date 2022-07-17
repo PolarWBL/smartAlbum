@@ -101,8 +101,9 @@ function stopInterval() {
 }
 
 
-//移到回收站提交按钮
-function moveToBin() {
+
+//删除提交按钮
+function deleteSuccess() {
     $("#deleteCancel").click();
     $(".fullpage-wrapper").fadeIn(300);
     let filenames = [];
@@ -110,7 +111,7 @@ function moveToBin() {
     console.log(filenames.toString());
     $.ajax({
         type: "post",
-        url: "/file/moveToRubbish",
+        url: "/file/delete",
         data: {
             filenames: filenames.toString()
         },
@@ -119,7 +120,7 @@ function moveToBin() {
             //删除后更新DOM
             $.ajax({
                 type: "get",
-                url: "/file/list",
+                url: "/file/bin",
                 success: function (data) {
                     $(".fullpage-wrapper").fadeOut(50);
                     let jsonDate = JSON.parse(data);
@@ -158,12 +159,13 @@ function delete_file(name) {
 }
 
 //批量删除
+$("#toolItems-share").on("click", deleteFile);
 $("#toolItems-trash").on("click", deleteFile);
 
 
 function deleteFile() {
-    let valArray = [];
-    let srcArrauy = [];
+    let valArray = new Array();
+    let srcArrauy = new Array();
     let val;
     let deleteFileNameHtml = "";
     $('input[name="albumPicture"]:checked').each(function () {
@@ -202,4 +204,66 @@ function hideMenu() {
     mobileMenu.addClass("menu-hide").removeClass("menu-show");
 }
 
+function recoverButton(){
+    let deleteMessage = document.getElementById("deleteMessage");
+    let deleteButton = document.getElementById("deleteButton");
+    deleteMessage.innerText = "是否恢复以下文件";
+    deleteButton.onclick = recover;
+    deleteButton.innerText = "恢复";
+}
 
+function deleteButton(){
+    let deleteMessage = document.getElementById("deleteMessage");
+    let deleteButton = document.getElementById("deleteButton");
+    deleteMessage.innerText = "是否彻底删除以下文件";
+    deleteButton.onclick = deleteSuccess;
+    deleteButton.innerText = "彻底删除";
+}
+
+function recover(){
+    $("#deleteCancel").click();
+    $(".fullpage-wrapper").fadeIn(300);
+    let filenames = [];
+    filenames.push($('#name').val());
+    console.log(filenames.toString());
+    $.ajax({
+        type: "post",
+        url: "/file/setImageToNormal",
+        data: {
+            filenames: filenames.toString()
+        },
+        success: function (data) {
+            console.log(data);
+            //删除后更新DOM
+            $.ajax({
+                type: "get",
+                url: "/file/bin",
+                success: function (data) {
+                    $(".fullpage-wrapper").fadeOut(50);
+                    let jsonDate = JSON.parse(data);
+                    console.log(jsonDate)
+                    let dowebokDeleteHtml = "";
+                    for (let i = 0; i < jsonDate.data.length; i++) {
+                        let oldTime = (new Date(jsonDate.data[i].createDate)).getTime();
+                        let curTime = new Date(oldTime).format("MM-dd hh:mm");
+                        dowebokDeleteHtml += "<li onmouseover='dowebokMouseover(this)' onmouseout='dowebokMouseout(this)'><input type='checkbox' name='albumPicture' value='" + jsonDate.data[i].name + "' onclick='inputNameAlbumPicture()'>" +
+                            "  <div><img class='lazyload'   data-th-original='" + jsonDate.data[i].url + "' data-th-src='" + jsonDate.data[i].urlMini + "'  src='" + jsonDate.data[i].urlMini + "' alt='" + jsonDate.data[i].name + "'></div>" +
+                            "<p title='" + jsonDate.data[i].name + "'>" + jsonDate.data[i].name + "</p><p  style='width: 100%;color: #b1b1b1;'>" + curTime + "</p></li>"
+                    }
+                    $("#dowebok").html(dowebokDeleteHtml);
+
+                    if ($("#selectAll").is(":checked"))
+                        $("#selectAll").click();
+                    let seleCount = $("input[name='albumPicture']").length;
+                    $("#selectCount").text("共" + seleCount + "项");
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+            });
+        },
+        error: function (data) {
+            console.log(data);
+        }
+    })
+}

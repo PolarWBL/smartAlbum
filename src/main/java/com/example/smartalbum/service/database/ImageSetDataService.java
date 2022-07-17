@@ -214,7 +214,10 @@ public class ImageSetDataService {
     public List<Image> getImageOutsideImageSet(int depositoryId, int imageSetId){
 
         ImageExample imageExample = new ImageExample();
-        imageExample.createCriteria().andDepositoryIdEqualTo(depositoryId).andImageSetIdNotEqualTo(imageSetId);
+        imageExample.createCriteria().
+                andDepositoryIdEqualTo(depositoryId).
+                andImageSetIdNotEqualTo(imageSetId).
+                andStateIdNotEqualTo(3);
         return imageMapper.selectSimpleImageListByExample(imageExample);
     }
 
