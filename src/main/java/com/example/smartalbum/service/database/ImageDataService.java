@@ -135,6 +135,16 @@ public class ImageDataService {
     }
 
     /**
+     * 获取回收站图片
+     * 多表查询，获取图片列表,只有图片名字、原图url，缩略图url、创建时间和修改时间,和state_id
+     */
+    public List<Image> getRecycleImages(int depositoryId) {
+        ImageExample example = new ImageExample();
+        example.createCriteria().andDepositoryIdEqualTo(depositoryId).andStateIdEqualTo(3);
+        return imageMapper.selectSimpleImageListByExample(example);
+    }
+
+    /**
      * 多表查询，获取图片列表,只有图片名字、原图url，缩略图url、创建时间和修改时间,和state_id
      */
     public List<Image> getSimpleImages(int id, int depositoryId) {
@@ -155,7 +165,8 @@ public class ImageDataService {
         ImageExample example = new ImageExample();
         example.createCriteria()
                 .andNameLike("%" + name + "%")
-                .andDepositoryIdEqualTo(depositoryId);
+                .andDepositoryIdEqualTo(depositoryId)
+                .andStateIdNotEqualTo(3);
 
         return imageMapper.selectSimpleImageListByExample(example);
     }

@@ -87,11 +87,11 @@ function showImgInformation() {
 
             //下载与删除
             let down = '"' + jsonDate.data.name + '"';
-            $('.detailedDownloadAndDelete').html("<a href='javascript:download(" + down + ")' title='下载'><i class='fa fa-download'></i></a>" +
+            $('.detailedDownloadAndDelete').html(
+                "<a href='javascript:download(" + down + ")' title='下载'><i class='fa fa-download'></i></a>" +
                 "<a href='#myModal' onclick='delete_file([[" + down + "]])' data-toggle='modal' title='删除' ><i class='fa fa-trash'></i></a>" +
                 "<a href='#renameModal' onclick='rename()' data-toggle='modal' title='重命名'><i class='fa fa-credit-card'></i></a>" +
-                "<a href='#' title='收藏'><i class='fa fa-star'></i></a>" +
-                "<a href='#' title='分享'><i class='fa fa-share'></i></a>");
+                "<a href='#' title='收藏'><i class='fa fa-star'></i></a>");
         },
         error: function (data) {
             console.log(data);

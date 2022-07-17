@@ -243,7 +243,7 @@ function checkPWD(pwd,pwdCheck,isRegister) {
         pwd = pwd.value.trim();
         let reg = /(?!.*\s)(?!^[\u4e00-\u9fa5]+$)(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^.{8,14}$/;
         if (!reg.test(pwd) && isRegister) {
-            pwdCheck.innerText ="密码长度为8~14个字符，字母和符号至少包含1种且不能有空格";
+            pwdCheck.innerText ="密码长度为8~14个字符，数字、字母和符号至少2种且不能有空格";
             pwdCheck.style.color = "red";
             return false;
         }
@@ -277,19 +277,6 @@ function checkMail() {
         return true;
     }
 }
-
-//
-// //重复密码
-// function checkRpwd() {
-//     let pwd = document.getElementById('password');
-//     let rpwd = document.getElementById('check-password');
-//     if (pwd.value != rpwd.value) {
-//         document.getElementById('checkpwdspan').innerText="两次密码不一致!";
-//         return false;
-//     }
-//     document.getElementById('checkpwdspan').innerText ="";
-//     return true;
-// }
 
 //验证码
 function checkVerifyCode() {
