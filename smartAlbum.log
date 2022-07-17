@@ -1,0 +1,541 @@
+2022-07-17 09:04:08.851  INFO 13060 --- [main] c.e.smartalbum.SmartAlbumApplication     : Starting SmartAlbumApplication using Java 1.8.0_202 on DESKTOP-KAIXIN with PID 13060 (D:\smartAlbum\target\classes started by Boliang Weng in D:\smartAlbum)
+2022-07-17 09:04:08.856  INFO 13060 --- [main] c.e.smartalbum.SmartAlbumApplication     : No active profile set, falling back to default profiles: default
+2022-07-17 09:04:09.744  INFO 13060 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-07-17 09:04:09.751  INFO 13060 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-17 09:04:09.752  INFO 13060 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-07-17 09:04:09.812  INFO 13060 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-17 09:04:09.812  INFO 13060 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 912 ms
+2022-07-17 09:04:09.861  INFO 13060 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2022-07-17 09:04:10.422  INFO 13060 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-07-17 09:04:11.067  INFO 13060 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-07-17 09:04:11.133  INFO 13060 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-07-17 09:04:11.227  INFO 13060 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-07-17 09:04:11.266  INFO 13060 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-07-17 09:04:11.277  INFO 13060 --- [main] c.e.smartalbum.SmartAlbumApplication     : Started SmartAlbumApplication in 2.8 seconds (JVM running for 3.44)
+2022-07-17 09:04:17.422  INFO 13060 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-17 09:04:17.423  INFO 13060 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-17 09:04:17.424  INFO 13060 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-07-17 09:04:26.656  INFO 13060 --- [http-nio-8081-exec-10] c.e.s.controller.file.FileController     : 你点击了图片 wallpaper (34).jpg
+2022-07-17 09:05:11.277  INFO 13060 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 开始生成精彩时刻视频
+2022-07-17 09:05:11.304  INFO 13060 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 生成精彩时刻视频结束
+2022-07-17 09:06:33.483  WARN 13060 --- [SpringContextShutdownHook] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/smartAlbum?serverTimezone=GMT%2B8, version : 1.2.5, lastPacketReceivedIdleMillis : 77101
+2022-07-17 09:06:33.508  INFO 13060 --- [SpringContextShutdownHook] c.e.smartalbum.service.ImageSetService   : 筛选结束
+2022-07-17 09:06:33.520  INFO 13060 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2022-07-17 09:06:33.521  INFO 13060 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-07-17 09:06:33.523  INFO 13060 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-07-17 09:06:33.524  INFO 13060 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-07-17 09:08:50.489  INFO 7920 --- [main] c.e.smartalbum.SmartAlbumApplication     : Starting SmartAlbumApplication using Java 1.8.0_202 on DESKTOP-KAIXIN with PID 7920 (D:\smartAlbum\target\classes started by Boliang Weng in D:\smartAlbum)
+2022-07-17 09:08:50.492  INFO 7920 --- [main] c.e.smartalbum.SmartAlbumApplication     : No active profile set, falling back to default profiles: default
+2022-07-17 09:08:51.527  INFO 7920 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-07-17 09:08:51.534  INFO 7920 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-17 09:08:51.534  INFO 7920 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-07-17 09:08:51.599  INFO 7920 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-17 09:08:51.599  INFO 7920 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1065 ms
+2022-07-17 09:08:51.647  INFO 7920 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2022-07-17 09:08:52.277  INFO 7920 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-07-17 09:08:52.976  INFO 7920 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-07-17 09:08:53.039  INFO 7920 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-07-17 09:08:53.132  INFO 7920 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-07-17 09:08:53.166  INFO 7920 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-07-17 09:08:53.175  INFO 7920 --- [main] c.e.smartalbum.SmartAlbumApplication     : Started SmartAlbumApplication in 3.002 seconds (JVM running for 3.565)
+2022-07-17 09:08:56.986  INFO 7920 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-17 09:08:56.986  INFO 7920 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-17 09:08:56.987  INFO 7920 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-07-17 09:08:57.014 ERROR 7920 --- [http-nio-8081-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+
+java.lang.NullPointerException: null
+	at com.example.smartalbum.controller.page.RecycleBinController.userMain(RecycleBinController.java:29) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_202]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_202]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_202]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_202]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1060) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.45.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.45.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124) ~[druid-1.2.5.jar:1.2.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_202]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_202]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_202]
+
+2022-07-17 09:09:53.186  INFO 7920 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 开始生成精彩时刻视频
+2022-07-17 09:09:53.192  INFO 7920 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 生成精彩时刻视频结束
+2022-07-17 09:10:57.529  WARN 7920 --- [http-nio-8081-exec-7] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/smartAlbum?serverTimezone=GMT%2B8, version : 1.2.5, lastPacketReceivedIdleMillis : 64331
+2022-07-17 09:12:38.661  WARN 7920 --- [SpringContextShutdownHook] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/smartAlbum?serverTimezone=GMT%2B8, version : 1.2.5, lastPacketReceivedIdleMillis : 88356
+2022-07-17 09:12:38.685  INFO 7920 --- [SpringContextShutdownHook] c.e.smartalbum.service.ImageSetService   : 筛选结束
+2022-07-17 09:12:38.696  INFO 7920 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2022-07-17 09:12:38.697  INFO 7920 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-07-17 09:12:38.698  INFO 7920 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-07-17 09:12:38.699  INFO 7920 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-07-17 09:13:14.295  INFO 4428 --- [main] c.e.smartalbum.SmartAlbumApplication     : Starting SmartAlbumApplication using Java 1.8.0_202 on DESKTOP-KAIXIN with PID 4428 (D:\smartAlbum\target\classes started by Boliang Weng in D:\smartAlbum)
+2022-07-17 09:13:14.297  INFO 4428 --- [main] c.e.smartalbum.SmartAlbumApplication     : No active profile set, falling back to default profiles: default
+2022-07-17 09:13:15.044  INFO 4428 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-07-17 09:13:15.048  INFO 4428 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-17 09:13:15.048  INFO 4428 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-07-17 09:13:15.097  INFO 4428 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-17 09:13:15.098  INFO 4428 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 763 ms
+2022-07-17 09:13:15.134  INFO 4428 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2022-07-17 09:13:15.554  INFO 4428 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-07-17 09:13:16.083  INFO 4428 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-07-17 09:13:16.132  INFO 4428 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-07-17 09:13:16.213  INFO 4428 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-07-17 09:13:16.245  INFO 4428 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-07-17 09:13:16.254  INFO 4428 --- [main] c.e.smartalbum.SmartAlbumApplication     : Started SmartAlbumApplication in 2.263 seconds (JVM running for 2.83)
+2022-07-17 09:13:28.699  INFO 4428 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-17 09:13:28.699  INFO 4428 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-17 09:13:28.700  INFO 4428 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-07-17 09:13:28.723 ERROR 4428 --- [http-nio-8081-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+
+java.lang.NullPointerException: null
+	at com.example.smartalbum.controller.page.RecycleBinController.userMain(RecycleBinController.java:29) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_202]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_202]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_202]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_202]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1060) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.45.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.45.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124) ~[druid-1.2.5.jar:1.2.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_202]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_202]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_202]
+
+2022-07-17 09:14:16.255  INFO 4428 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 开始生成精彩时刻视频
+2022-07-17 09:14:16.305  WARN 4428 --- [scheduling-1] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/smartAlbum?serverTimezone=GMT%2B8, version : 1.2.5, lastPacketReceivedIdleMillis : 60752
+2022-07-17 09:14:16.459  INFO 4428 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 生成精彩时刻视频结束
+2022-07-17 09:14:59.758  INFO 4428 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2022-07-17 09:14:59.759  INFO 4428 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-07-17 09:14:59.760  INFO 4428 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-07-17 09:14:59.761  INFO 4428 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-07-17 09:15:03.592  INFO 12332 --- [main] c.e.smartalbum.SmartAlbumApplication     : Starting SmartAlbumApplication using Java 1.8.0_202 on DESKTOP-KAIXIN with PID 12332 (D:\smartAlbum\target\classes started by Boliang Weng in D:\smartAlbum)
+2022-07-17 09:15:03.594  INFO 12332 --- [main] c.e.smartalbum.SmartAlbumApplication     : No active profile set, falling back to default profiles: default
+2022-07-17 09:15:04.383  INFO 12332 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-07-17 09:15:04.389  INFO 12332 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-17 09:15:04.389  INFO 12332 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-07-17 09:15:04.443  INFO 12332 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-17 09:15:04.443  INFO 12332 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 815 ms
+2022-07-17 09:15:04.481  INFO 12332 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2022-07-17 09:15:04.912  INFO 12332 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-07-17 09:15:05.464  INFO 12332 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-07-17 09:15:05.518  INFO 12332 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-07-17 09:15:05.606  INFO 12332 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-07-17 09:15:05.641  INFO 12332 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-07-17 09:15:05.650  INFO 12332 --- [main] c.e.smartalbum.SmartAlbumApplication     : Started SmartAlbumApplication in 2.354 seconds (JVM running for 2.878)
+2022-07-17 09:15:08.791  INFO 12332 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-17 09:15:08.792  INFO 12332 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-17 09:15:08.792  INFO 12332 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-07-17 09:15:25.961  INFO 12332 --- [http-nio-8081-exec-7] c.e.smartalbum.service.ImageSetService   : 筛选结束
+2022-07-17 09:16:05.654  INFO 12332 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 开始生成精彩时刻视频
+2022-07-17 09:16:05.662  INFO 12332 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 生成精彩时刻视频结束
+2022-07-17 09:19:41.733  INFO 12332 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2022-07-17 09:19:41.734  INFO 12332 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-07-17 09:19:41.736  INFO 12332 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-07-17 09:19:41.738  INFO 12332 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-07-17 09:41:24.362  INFO 10372 --- [main] c.e.smartalbum.SmartAlbumApplication     : Starting SmartAlbumApplication using Java 1.8.0_202 on DESKTOP-KAIXIN with PID 10372 (D:\smartAlbum\target\classes started by Boliang Weng in D:\smartAlbum)
+2022-07-17 09:41:24.364  INFO 10372 --- [main] c.e.smartalbum.SmartAlbumApplication     : No active profile set, falling back to default profiles: default
+2022-07-17 09:41:25.097  INFO 10372 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-07-17 09:41:25.102  INFO 10372 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-17 09:41:25.102  INFO 10372 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-07-17 09:41:25.152  INFO 10372 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-17 09:41:25.152  INFO 10372 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 754 ms
+2022-07-17 09:41:25.189  INFO 10372 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2022-07-17 09:41:25.621  INFO 10372 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-07-17 09:41:26.171  INFO 10372 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-07-17 09:41:26.223  INFO 10372 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-07-17 09:41:26.325  INFO 10372 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-07-17 09:41:26.374  INFO 10372 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-07-17 09:41:26.385  INFO 10372 --- [main] c.e.smartalbum.SmartAlbumApplication     : Started SmartAlbumApplication in 2.327 seconds (JVM running for 2.87)
+2022-07-17 09:41:47.954  INFO 10372 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-17 09:41:47.954  INFO 10372 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-17 09:41:47.956  INFO 10372 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-07-17 09:42:26.389  INFO 10372 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 开始生成精彩时刻视频
+2022-07-17 09:42:26.397  INFO 10372 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 生成精彩时刻视频结束
+2022-07-17 09:48:09.822  WARN 10372 --- [SpringContextShutdownHook] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/smartAlbum?serverTimezone=GMT%2B8, version : 1.2.5, lastPacketReceivedIdleMillis : 343420
+2022-07-17 09:48:09.850  INFO 10372 --- [SpringContextShutdownHook] c.e.smartalbum.service.ImageSetService   : 筛选结束
+2022-07-17 09:48:09.861  INFO 10372 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2022-07-17 09:48:09.862  INFO 10372 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-07-17 09:48:09.864  INFO 10372 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-07-17 09:48:09.865  INFO 10372 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-07-17 09:48:13.883  INFO 1404 --- [main] c.e.smartalbum.SmartAlbumApplication     : Starting SmartAlbumApplication using Java 1.8.0_202 on DESKTOP-KAIXIN with PID 1404 (D:\smartAlbum\target\classes started by Boliang Weng in D:\smartAlbum)
+2022-07-17 09:48:13.885  INFO 1404 --- [main] c.e.smartalbum.SmartAlbumApplication     : No active profile set, falling back to default profiles: default
+2022-07-17 09:48:14.672  INFO 1404 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-07-17 09:48:14.676  INFO 1404 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-17 09:48:14.677  INFO 1404 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-07-17 09:48:14.726  INFO 1404 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-17 09:48:14.726  INFO 1404 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 801 ms
+2022-07-17 09:48:14.762  INFO 1404 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2022-07-17 09:48:15.262  INFO 1404 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-07-17 09:48:15.819  INFO 1404 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-07-17 09:48:15.870  INFO 1404 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-07-17 09:48:15.953  INFO 1404 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-07-17 09:48:15.986  INFO 1404 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-07-17 09:48:15.994  INFO 1404 --- [main] c.e.smartalbum.SmartAlbumApplication     : Started SmartAlbumApplication in 2.442 seconds (JVM running for 3.121)
+2022-07-17 09:48:18.649  INFO 1404 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-17 09:48:18.649  INFO 1404 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-17 09:48:18.649  INFO 1404 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-07-17 09:48:42.253  INFO 1404 --- [pool-2-thread-2] c.e.smartalbum.ecloud.ImageRecognition   : 通用物品识别结果：[{"classes":"人,服装,男子,男性人物,人类,成人,人脸,白色的,"}]
+2022-07-17 09:48:43.001  INFO 1404 --- [pool-2-thread-8] c.e.smartalbum.ecloud.ImageRecognition   : 通用物品识别结果：[{"classes":"人,服装,男子,现象,人类,人脸,"}]
+2022-07-17 09:48:43.043  INFO 1404 --- [pool-2-thread-4] c.e.smartalbum.ecloud.ImageRecognition   : 通用物品识别结果：[{"classes":"人,服装,男子,男性人物,绅士,套装,正式服装,时尚,快照,常设,人类,照片,"}]
+2022-07-17 09:48:43.112  INFO 1404 --- [pool-2-thread-1] c.e.smartalbum.ecloud.ImageRecognition   : 通用物品识别结果：[{"classes":"人,服装,男子,套装,白领阶层,男性人物,照片,常设,快照,人类,商人,外衣,绅士,"}]
+2022-07-17 09:48:43.167  INFO 1404 --- [pool-2-thread-3] c.e.smartalbum.ecloud.ImageRecognition   : 通用物品识别结果：[{"classes":"人,服装,人脸,照片,男性人物,男子,人头,人类,发型,常设,白色的,前额,绅士,下巴,"}]
+2022-07-17 09:48:44.046  INFO 1404 --- [pool-1-thread-4] com.example.smartalbum.ecloud.OssUtil    : x20d7b62d416442c18ed046d2ba658580/people (2).jpg上传成功
+2022-07-17 09:48:44.345  INFO 1404 --- [pool-1-thread-3] com.example.smartalbum.ecloud.OssUtil    : x20d7b62d416442c18ed046d2ba658580/people (3).jpg上传成功
+2022-07-17 09:48:44.533  INFO 1404 --- [pool-1-thread-1] com.example.smartalbum.ecloud.OssUtil    : x20d7b62d416442c18ed046d2ba658580/people (1).jpg上传成功
+2022-07-17 09:48:44.533  INFO 1404 --- [pool-1-thread-2] com.example.smartalbum.ecloud.OssUtil    : x20d7b62d416442c18ed046d2ba658580/people (5).jpg上传成功
+2022-07-17 09:48:44.754  INFO 1404 --- [pool-1-thread-5] com.example.smartalbum.ecloud.OssUtil    : x20d7b62d416442c18ed046d2ba658580/people (4).jpg上传成功
+2022-07-17 09:48:44.836  INFO 1404 --- [pool-4-thread-3] c.e.smartalbum.service.ImageService      : 向image表中插入了 1 条数据，向tag表插入了 14 条数据
+2022-07-17 09:48:44.842  INFO 1404 --- [pool-4-thread-3] c.e.smartalbum.service.UploadService     : 图片 people (3).jpg 数据校对完毕
+2022-07-17 09:48:44.858  INFO 1404 --- [pool-4-thread-1] c.e.smartalbum.service.ImageService      : 向image表中插入了 1 条数据，向tag表插入了 12 条数据
+2022-07-17 09:48:44.863  INFO 1404 --- [pool-4-thread-1] c.e.smartalbum.service.UploadService     : 图片 people (1).jpg 数据校对完毕
+2022-07-17 09:48:44.914  INFO 1404 --- [pool-4-thread-2] c.e.smartalbum.service.ImageService      : 向image表中插入了 1 条数据，向tag表插入了 8 条数据
+2022-07-17 09:48:44.917  INFO 1404 --- [pool-4-thread-2] c.e.smartalbum.service.UploadService     : 图片 people (2).jpg 数据校对完毕
+2022-07-17 09:48:44.933  INFO 1404 --- [pool-4-thread-5] c.e.smartalbum.service.ImageService      : 向image表中插入了 1 条数据，向tag表插入了 13 条数据
+2022-07-17 09:48:44.937  INFO 1404 --- [pool-4-thread-5] c.e.smartalbum.service.UploadService     : 图片 people (5).jpg 数据校对完毕
+2022-07-17 09:48:44.962  INFO 1404 --- [pool-4-thread-4] c.e.smartalbum.service.ImageService      : 向image表中插入了 1 条数据，向tag表插入了 6 条数据
+2022-07-17 09:48:44.965  INFO 1404 --- [pool-4-thread-4] c.e.smartalbum.service.UploadService     : 图片 people (4).jpg 数据校对完毕
+2022-07-17 09:48:46.189  INFO 1404 --- [pool-2-thread-11] c.e.smartalbum.ecloud.ImageRecognition   : 通用物品识别结果：[{"classes":"人,服装,男子,男性人物,人类,照片,坐着,快照,白色的,常设,器官（生物学）,"}]
+2022-07-17 09:48:47.114  INFO 1404 --- [pool-2-thread-17] c.e.smartalbum.ecloud.ImageRecognition   : 通用物品识别结果：[{"classes":"人,人脸,男性人物,发型,前额,下巴,人的头发,美丽,皮肤,人类的眼睛,人头,器官（生物学）,人类,黑发,脸颊,人的鼻子,眉,服装,青少年,人的手,手指,"}]
+2022-07-17 09:48:47.114  INFO 1404 --- [pool-2-thread-15] c.e.smartalbum.ecloud.ImageRecognition   : 通用物品识别结果：[{"classes":"人,服装,人脸,头戴物,男性人物,帽,人头,凉爽的,男子,无檐小便帽,树,人类,前额,美丽,针织帽,器官（生物学）,照片,下巴,白色的,人的头发,黑色的,表情,"}]
+2022-07-17 09:48:47.147  INFO 1404 --- [pool-2-thread-19] c.e.smartalbum.ecloud.ImageRecognition   : 通用物品识别结果：[{"classes":"人,服装,人类,常设,成人,男子,男性人物,人的身体,"}]
+2022-07-17 09:48:47.397  INFO 1404 --- [pool-2-thread-13] c.e.smartalbum.ecloud.ImageRecognition   : 通用物品识别结果：[{"classes":"人,人脸,服装,"}]
+2022-07-17 09:48:47.559  INFO 1404 --- [pool-1-thread-11] com.example.smartalbum.ecloud.OssUtil    : x20d7b62d416442c18ed046d2ba658580/people (6).jpg上传成功
+2022-07-17 09:48:47.934  INFO 1404 --- [pool-1-thread-13] com.example.smartalbum.ecloud.OssUtil    : x20d7b62d416442c18ed046d2ba658580/people (7).jpg上传成功
+2022-07-17 09:48:48.038  INFO 1404 --- [pool-1-thread-15] com.example.smartalbum.ecloud.OssUtil    : x20d7b62d416442c18ed046d2ba658580/people (8).jpg上传成功
+2022-07-17 09:48:48.563  INFO 1404 --- [pool-4-thread-3] c.e.smartalbum.service.ImageService      : 向image表中插入了 1 条数据，向tag表插入了 21 条数据
+2022-07-17 09:48:48.566  INFO 1404 --- [pool-4-thread-3] c.e.smartalbum.service.UploadService     : 图片 people (6).jpg 数据校对完毕
+2022-07-17 09:48:48.598  INFO 1404 --- [pool-1-thread-17] com.example.smartalbum.ecloud.OssUtil    : x20d7b62d416442c18ed046d2ba658580/people (9).jpg上传成功
+2022-07-17 09:48:48.766  INFO 1404 --- [pool-4-thread-4] c.e.smartalbum.service.ImageService      : 向image表中插入了 1 条数据，向tag表插入了 3 条数据
+2022-07-17 09:48:48.770  INFO 1404 --- [pool-4-thread-4] c.e.smartalbum.service.UploadService     : 图片 people (8).jpg 数据校对完毕
+2022-07-17 09:48:48.786  INFO 1404 --- [pool-4-thread-1] c.e.smartalbum.service.ImageService      : 向image表中插入了 1 条数据，向tag表插入了 11 条数据
+2022-07-17 09:48:48.790  INFO 1404 --- [pool-4-thread-1] c.e.smartalbum.service.UploadService     : 图片 people (7).jpg 数据校对完毕
+2022-07-17 09:48:48.827  INFO 1404 --- [pool-1-thread-19] com.example.smartalbum.ecloud.OssUtil    : x20d7b62d416442c18ed046d2ba658580/people (10).jpg上传成功
+2022-07-17 09:48:48.904  INFO 1404 --- [pool-4-thread-2] c.e.smartalbum.service.ImageService      : 向image表中插入了 1 条数据，向tag表插入了 22 条数据
+2022-07-17 09:48:48.908  INFO 1404 --- [pool-4-thread-2] c.e.smartalbum.service.UploadService     : 图片 people (9).jpg 数据校对完毕
+2022-07-17 09:48:48.984  INFO 1404 --- [pool-4-thread-5] c.e.smartalbum.service.ImageService      : 向image表中插入了 1 条数据，向tag表插入了 8 条数据
+2022-07-17 09:48:48.987  INFO 1404 --- [pool-4-thread-5] c.e.smartalbum.service.UploadService     : 图片 people (10).jpg 数据校对完毕
+2022-07-17 09:49:15.993  INFO 1404 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 开始生成精彩时刻视频
+2022-07-17 09:49:15.998  INFO 1404 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 生成精彩时刻视频结束
+2022-07-17 09:51:32.278  WARN 1404 --- [SpringContextShutdownHook] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/smartAlbum?serverTimezone=GMT%2B8, version : 1.2.5, lastPacketReceivedIdleMillis : 125123
+2022-07-17 09:51:32.279  WARN 1404 --- [SpringContextShutdownHook] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/smartAlbum?serverTimezone=GMT%2B8, version : 1.2.5, lastPacketReceivedIdleMillis : 163352
+2022-07-17 09:51:32.280  WARN 1404 --- [SpringContextShutdownHook] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/smartAlbum?serverTimezone=GMT%2B8, version : 1.2.5, lastPacketReceivedIdleMillis : 163371
+2022-07-17 09:51:32.280  WARN 1404 --- [SpringContextShutdownHook] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/smartAlbum?serverTimezone=GMT%2B8, version : 1.2.5, lastPacketReceivedIdleMillis : 167417
+2022-07-17 09:51:32.281  WARN 1404 --- [SpringContextShutdownHook] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/smartAlbum?serverTimezone=GMT%2B8, version : 1.2.5, lastPacketReceivedIdleMillis : 167439
+2022-07-17 09:51:32.306  INFO 1404 --- [SpringContextShutdownHook] c.e.smartalbum.service.ImageSetService   : 筛选结束
+2022-07-17 09:51:32.341  INFO 1404 --- [SpringContextShutdownHook] c.e.s.c.listener.SessionListener         : [736, 737, 738, 739, 740, 741, 742, 743, 734, 735]
+2022-07-17 09:51:32.401  INFO 1404 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2022-07-17 09:51:32.402  INFO 1404 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-07-17 09:51:32.404  INFO 1404 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-07-17 09:51:32.405  INFO 1404 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-07-17 09:51:35.016  INFO 1992 --- [main] c.e.smartalbum.SmartAlbumApplication     : Starting SmartAlbumApplication using Java 1.8.0_202 on DESKTOP-KAIXIN with PID 1992 (D:\smartAlbum\target\classes started by Boliang Weng in D:\smartAlbum)
+2022-07-17 09:51:35.018  INFO 1992 --- [main] c.e.smartalbum.SmartAlbumApplication     : No active profile set, falling back to default profiles: default
+2022-07-17 09:51:35.767  INFO 1992 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-07-17 09:51:35.772  INFO 1992 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-17 09:51:35.772  INFO 1992 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-07-17 09:51:35.826  INFO 1992 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-17 09:51:35.826  INFO 1992 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 768 ms
+2022-07-17 09:51:35.863  INFO 1992 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2022-07-17 09:51:36.289  INFO 1992 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-07-17 09:51:36.844  INFO 1992 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-07-17 09:51:36.897  INFO 1992 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-07-17 09:51:36.984  INFO 1992 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-07-17 09:51:37.018  INFO 1992 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-07-17 09:51:37.028  INFO 1992 --- [main] c.e.smartalbum.SmartAlbumApplication     : Started SmartAlbumApplication in 2.317 seconds (JVM running for 2.946)
+2022-07-17 09:51:48.275  INFO 1992 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-17 09:51:48.275  INFO 1992 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-17 09:51:48.276  INFO 1992 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-07-17 09:52:37.032  INFO 1992 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 开始生成精彩时刻视频
+2022-07-17 09:52:37.050  INFO 1992 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 用户仓库 51 中的相册 人物集 不满足生成条件，已结束生成
+2022-07-17 09:52:37.051  INFO 1992 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 生成精彩时刻视频结束
+2022-07-17 09:57:01.300  WARN 1992 --- [SpringContextShutdownHook] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/smartAlbum?serverTimezone=GMT%2B8, version : 1.2.5, lastPacketReceivedIdleMillis : 264249
+2022-07-17 09:57:01.327  INFO 1992 --- [SpringContextShutdownHook] c.e.smartalbum.service.ImageSetService   : 筛选结束
+2022-07-17 09:57:01.362  INFO 1992 --- [SpringContextShutdownHook] c.e.s.c.listener.SessionListener         : [736, 737, 738, 739, 740, 741, 742, 743, 734, 735]
+2022-07-17 09:57:01.386  INFO 1992 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2022-07-17 09:57:01.387  INFO 1992 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-07-17 09:57:01.388  INFO 1992 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-07-17 09:57:01.389  INFO 1992 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-07-17 09:57:03.858  INFO 4064 --- [main] c.e.smartalbum.SmartAlbumApplication     : Starting SmartAlbumApplication using Java 1.8.0_202 on DESKTOP-KAIXIN with PID 4064 (D:\smartAlbum\target\classes started by Boliang Weng in D:\smartAlbum)
+2022-07-17 09:57:03.860  INFO 4064 --- [main] c.e.smartalbum.SmartAlbumApplication     : No active profile set, falling back to default profiles: default
+2022-07-17 09:57:04.584  INFO 4064 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-07-17 09:57:04.589  INFO 4064 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-17 09:57:04.590  INFO 4064 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-07-17 09:57:04.659  INFO 4064 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-17 09:57:04.659  INFO 4064 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 764 ms
+2022-07-17 09:57:04.710  INFO 4064 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2022-07-17 09:57:05.161  INFO 4064 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-07-17 09:57:05.684  INFO 4064 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-07-17 09:57:05.733  INFO 4064 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-07-17 09:57:05.823  INFO 4064 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-07-17 09:57:05.854  INFO 4064 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-07-17 09:57:05.862  INFO 4064 --- [main] c.e.smartalbum.SmartAlbumApplication     : Started SmartAlbumApplication in 2.316 seconds (JVM running for 2.875)
+2022-07-17 09:57:11.523  INFO 4064 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-17 09:57:11.523  INFO 4064 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-17 09:57:11.524  INFO 4064 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-07-17 09:57:19.361  INFO 4064 --- [http-nio-8081-exec-6] c.e.s.controller.file.FileController     : 你点击了图片 wallpaper (271).jpg
+2022-07-17 09:58:05.861  INFO 4064 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 开始生成精彩时刻视频
+2022-07-17 09:58:05.874  INFO 4064 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 用户仓库 51 中的相册 人物集 不满足生成条件，已结束生成
+2022-07-17 09:58:05.875  INFO 4064 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 生成精彩时刻视频结束
+2022-07-17 09:59:37.882  WARN 4064 --- [SpringContextShutdownHook] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/smartAlbum?serverTimezone=GMT%2B8, version : 1.2.5, lastPacketReceivedIdleMillis : 92005
+2022-07-17 09:59:37.907  INFO 4064 --- [SpringContextShutdownHook] c.e.smartalbum.service.ImageSetService   : 筛选结束
+2022-07-17 09:59:37.941  INFO 4064 --- [SpringContextShutdownHook] c.e.s.c.listener.SessionListener         : [736, 737, 738, 739, 740, 741, 742, 743, 734, 735]
+2022-07-17 09:59:37.969  INFO 4064 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2022-07-17 09:59:37.970  INFO 4064 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-07-17 09:59:37.971  INFO 4064 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-07-17 09:59:37.972  INFO 4064 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-07-17 09:59:40.424  INFO 6256 --- [main] c.e.smartalbum.SmartAlbumApplication     : Starting SmartAlbumApplication using Java 1.8.0_202 on DESKTOP-KAIXIN with PID 6256 (D:\smartAlbum\target\classes started by Boliang Weng in D:\smartAlbum)
+2022-07-17 09:59:40.426  INFO 6256 --- [main] c.e.smartalbum.SmartAlbumApplication     : No active profile set, falling back to default profiles: default
+2022-07-17 09:59:41.164  INFO 6256 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-07-17 09:59:41.168  INFO 6256 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-17 09:59:41.169  INFO 6256 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-07-17 09:59:41.218  INFO 6256 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-17 09:59:41.219  INFO 6256 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 758 ms
+2022-07-17 09:59:41.255  INFO 6256 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2022-07-17 09:59:41.678  INFO 6256 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-07-17 09:59:42.251  INFO 6256 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-07-17 09:59:42.306  INFO 6256 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-07-17 09:59:42.394  INFO 6256 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-07-17 09:59:42.427  INFO 6256 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-07-17 09:59:42.435  INFO 6256 --- [main] c.e.smartalbum.SmartAlbumApplication     : Started SmartAlbumApplication in 2.31 seconds (JVM running for 2.848)
+2022-07-17 09:59:45.834  INFO 6256 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-17 09:59:45.834  INFO 6256 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-17 09:59:45.834  INFO 6256 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-07-17 10:00:42.445  INFO 6256 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 开始生成精彩时刻视频
+2022-07-17 10:00:42.457  INFO 6256 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 用户仓库 51 中的相册 人物集 不满足生成条件，已结束生成
+2022-07-17 10:00:42.458  INFO 6256 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 生成精彩时刻视频结束
+2022-07-17 10:01:47.345  WARN 6256 --- [SpringContextShutdownHook] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/smartAlbum?serverTimezone=GMT%2B8, version : 1.2.5, lastPacketReceivedIdleMillis : 64886
+2022-07-17 10:01:47.375  INFO 6256 --- [SpringContextShutdownHook] c.e.smartalbum.service.ImageSetService   : 筛选结束
+2022-07-17 10:01:47.409  INFO 6256 --- [SpringContextShutdownHook] c.e.s.c.listener.SessionListener         : [736, 737, 738, 739, 740, 741, 742, 743, 734, 735]
+2022-07-17 10:01:47.445  INFO 6256 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2022-07-17 10:01:47.446  INFO 6256 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-07-17 10:01:47.447  INFO 6256 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-07-17 10:01:47.448  INFO 6256 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-07-17 10:01:50.041  INFO 1592 --- [main] c.e.smartalbum.SmartAlbumApplication     : Starting SmartAlbumApplication using Java 1.8.0_202 on DESKTOP-KAIXIN with PID 1592 (D:\smartAlbum\target\classes started by Boliang Weng in D:\smartAlbum)
+2022-07-17 10:01:50.044  INFO 1592 --- [main] c.e.smartalbum.SmartAlbumApplication     : No active profile set, falling back to default profiles: default
+2022-07-17 10:01:50.773  INFO 1592 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-07-17 10:01:50.778  INFO 1592 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-17 10:01:50.778  INFO 1592 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-07-17 10:01:50.826  INFO 1592 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-17 10:01:50.826  INFO 1592 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 747 ms
+2022-07-17 10:01:50.860  INFO 1592 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2022-07-17 10:01:51.303  INFO 1592 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-07-17 10:01:51.873  INFO 1592 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-07-17 10:01:51.925  INFO 1592 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-07-17 10:01:52.007  INFO 1592 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-07-17 10:01:52.042  INFO 1592 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-07-17 10:01:52.050  INFO 1592 --- [main] c.e.smartalbum.SmartAlbumApplication     : Started SmartAlbumApplication in 2.311 seconds (JVM running for 2.875)
+2022-07-17 10:01:55.679  INFO 1592 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-17 10:01:55.679  INFO 1592 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-17 10:01:55.681  INFO 1592 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-07-17 10:02:52.063  INFO 1592 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 开始生成精彩时刻视频
+2022-07-17 10:02:52.080  INFO 1592 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 用户仓库 51 中的相册 人物集 不满足生成条件，已结束生成
+2022-07-17 10:02:52.082  INFO 1592 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 生成精彩时刻视频结束
+2022-07-17 10:09:12.556  WARN 1592 --- [http-nio-8081-exec-8] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/smartAlbum?serverTimezone=GMT%2B8, version : 1.2.5, lastPacketReceivedIdleMillis : 324803
+2022-07-17 10:11:00.378  WARN 1592 --- [SpringContextShutdownHook] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/smartAlbum?serverTimezone=GMT%2B8, version : 1.2.5, lastPacketReceivedIdleMillis : 107801
+2022-07-17 10:11:00.406  INFO 1592 --- [SpringContextShutdownHook] c.e.smartalbum.service.ImageSetService   : 筛选结束
+2022-07-17 10:11:00.446  INFO 1592 --- [SpringContextShutdownHook] c.e.s.c.listener.SessionListener         : [736, 737, 738, 739, 740, 741, 742, 743, 734, 735]
+2022-07-17 10:11:00.474  INFO 1592 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2022-07-17 10:11:00.475  INFO 1592 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-07-17 10:11:00.476  INFO 1592 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-07-17 10:11:00.477  INFO 1592 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-07-17 10:11:02.985  INFO 1828 --- [main] c.e.smartalbum.SmartAlbumApplication     : Starting SmartAlbumApplication using Java 1.8.0_202 on DESKTOP-KAIXIN with PID 1828 (D:\smartAlbum\target\classes started by Boliang Weng in D:\smartAlbum)
+2022-07-17 10:11:02.986  INFO 1828 --- [main] c.e.smartalbum.SmartAlbumApplication     : No active profile set, falling back to default profiles: default
+2022-07-17 10:11:03.711  INFO 1828 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-07-17 10:11:03.716  INFO 1828 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-17 10:11:03.716  INFO 1828 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-07-17 10:11:03.765  INFO 1828 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-17 10:11:03.765  INFO 1828 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 739 ms
+2022-07-17 10:11:03.803  INFO 1828 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2022-07-17 10:11:04.229  INFO 1828 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-07-17 10:11:04.752  INFO 1828 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-07-17 10:11:04.801  INFO 1828 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-07-17 10:11:04.880  INFO 1828 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-07-17 10:11:04.910  INFO 1828 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-07-17 10:11:04.918  INFO 1828 --- [main] c.e.smartalbum.SmartAlbumApplication     : Started SmartAlbumApplication in 2.253 seconds (JVM running for 2.796)
+2022-07-17 10:12:04.927  INFO 1828 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 开始生成精彩时刻视频
+2022-07-17 10:12:04.959  WARN 1828 --- [scheduling-1] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/smartAlbum?serverTimezone=GMT%2B8, version : 1.2.5, lastPacketReceivedIdleMillis : 60732
+2022-07-17 10:12:05.109  INFO 1828 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 用户仓库 51 中的相册 人物集 不满足生成条件，已结束生成
+2022-07-17 10:12:05.110  INFO 1828 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 生成精彩时刻视频结束
+2022-07-17 10:13:46.457  INFO 1828 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-17 10:13:46.457  INFO 1828 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-17 10:13:46.458  INFO 1828 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-07-17 10:13:48.885  WARN 1828 --- [http-nio-8081-exec-9] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/smartAlbum?serverTimezone=GMT%2B8, version : 1.2.5, lastPacketReceivedIdleMillis : 103779
+2022-07-17 10:17:49.912  WARN 1828 --- [SpringContextShutdownHook] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/smartAlbum?serverTimezone=GMT%2B8, version : 1.2.5, lastPacketReceivedIdleMillis : 160156
+2022-07-17 10:17:49.936  INFO 1828 --- [SpringContextShutdownHook] c.e.smartalbum.service.ImageSetService   : 筛选结束
+2022-07-17 10:17:49.968  INFO 1828 --- [SpringContextShutdownHook] c.e.s.c.listener.SessionListener         : [736, 737, 738, 739, 740, 741, 742, 743, 734, 735]
+2022-07-17 10:17:49.987  INFO 1828 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2022-07-17 10:17:49.988  INFO 1828 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-07-17 10:17:49.989  INFO 1828 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-07-17 10:17:49.990  INFO 1828 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-07-17 15:34:31.335  INFO 13364 --- [main] c.e.smartalbum.SmartAlbumApplication     : Starting SmartAlbumApplication using Java 1.8.0_202 on DESKTOP-KAIXIN with PID 13364 (D:\smartAlbum\target\classes started by Boliang Weng in D:\smartAlbum)
+2022-07-17 15:34:31.338  INFO 13364 --- [main] c.e.smartalbum.SmartAlbumApplication     : No active profile set, falling back to default profiles: default
+2022-07-17 15:34:32.134  INFO 13364 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-07-17 15:34:32.139  INFO 13364 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-17 15:34:32.140  INFO 13364 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-07-17 15:34:32.197  INFO 13364 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-17 15:34:32.197  INFO 13364 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 824 ms
+2022-07-17 15:34:32.242  INFO 13364 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2022-07-17 15:34:32.713  INFO 13364 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-07-17 15:34:33.316  INFO 13364 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-07-17 15:34:33.393  INFO 13364 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-07-17 15:34:33.529  INFO 13364 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-07-17 15:34:33.567  INFO 13364 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-07-17 15:34:33.576  INFO 13364 --- [main] c.e.smartalbum.SmartAlbumApplication     : Started SmartAlbumApplication in 2.547 seconds (JVM running for 3.123)
+2022-07-17 15:34:55.991  INFO 13364 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-17 15:34:55.991  INFO 13364 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-17 15:34:55.993  INFO 13364 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-07-17 15:35:18.299  INFO 13364 --- [http-nio-8081-exec-9] c.e.s.controller.file.FileController     : 你点击了图片 wallpaper (271).jpg
+2022-07-17 15:35:33.584  INFO 13364 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 开始生成精彩时刻视频
+2022-07-17 15:35:33.650  INFO 13364 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 用户仓库 51 中的相册 人物集 不满足生成条件，已结束生成
+2022-07-17 15:35:33.650  INFO 13364 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 生成精彩时刻视频结束
+2022-07-17 15:37:04.908  WARN 13364 --- [SpringContextShutdownHook] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/smartAlbum?serverTimezone=GMT%2B8, version : 1.2.5, lastPacketReceivedIdleMillis : 91255
+2022-07-17 15:37:04.936  INFO 13364 --- [SpringContextShutdownHook] c.e.smartalbum.service.ImageSetService   : 筛选结束
+2022-07-17 15:37:04.966  INFO 13364 --- [SpringContextShutdownHook] c.e.s.c.listener.SessionListener         : [736, 737, 738, 739, 740, 741, 742, 743, 734, 735]
+2022-07-17 15:37:04.989  INFO 13364 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2022-07-17 15:37:04.990  INFO 13364 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-07-17 15:37:04.991  INFO 13364 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-07-17 15:37:04.992  INFO 13364 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-07-17 15:37:07.456  INFO 5508 --- [main] c.e.smartalbum.SmartAlbumApplication     : Starting SmartAlbumApplication using Java 1.8.0_202 on DESKTOP-KAIXIN with PID 5508 (D:\smartAlbum\target\classes started by Boliang Weng in D:\smartAlbum)
+2022-07-17 15:37:07.458  INFO 5508 --- [main] c.e.smartalbum.SmartAlbumApplication     : No active profile set, falling back to default profiles: default
+2022-07-17 15:37:08.280  INFO 5508 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-07-17 15:37:08.285  INFO 5508 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-17 15:37:08.285  INFO 5508 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-07-17 15:37:08.336  INFO 5508 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-17 15:37:08.337  INFO 5508 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 817 ms
+2022-07-17 15:37:08.374  INFO 5508 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2022-07-17 15:37:08.820  INFO 5508 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-07-17 15:37:09.535  INFO 5508 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-07-17 15:37:09.607  INFO 5508 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-07-17 15:37:09.730  INFO 5508 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-07-17 15:37:09.778  INFO 5508 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-07-17 15:37:09.788  INFO 5508 --- [main] c.e.smartalbum.SmartAlbumApplication     : Started SmartAlbumApplication in 2.635 seconds (JVM running for 3.215)
+2022-07-17 15:37:16.162  INFO 5508 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-17 15:37:16.162  INFO 5508 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-17 15:37:16.163  INFO 5508 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-07-17 15:37:20.711  INFO 5508 --- [http-nio-8081-exec-7] c.e.s.controller.file.FileController     : 你点击了图片 wallpaper (34).jpg
+2022-07-17 15:37:29.462  INFO 5508 --- [http-nio-8081-exec-3] c.e.s.controller.file.FileController     : 你点击了图片 wallpaper (34).jpg
+2022-07-17 15:37:52.132  INFO 5508 --- [http-nio-8081-exec-2] c.e.s.controller.file.FileController     : 你点击了图片 people (2).jpg
+2022-07-17 15:38:04.467  INFO 5508 --- [http-nio-8081-exec-6] c.e.s.controller.file.FileController     : 你点击了图片 people (2).jpg
+2022-07-17 15:38:04.475  INFO 5508 --- [http-nio-8081-exec-5] c.e.s.controller.file.FileController     : 你点击了图片 people (2).jpg
+2022-07-17 15:38:09.800  INFO 5508 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 开始生成精彩时刻视频
+2022-07-17 15:38:09.808  INFO 5508 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 用户仓库 51 中的相册 人物集 不满足生成条件，已结束生成
+2022-07-17 15:38:09.808  INFO 5508 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 生成精彩时刻视频结束
+2022-07-17 15:38:13.883  INFO 5508 --- [http-nio-8081-exec-9] c.e.s.controller.file.FileController     : 你点击了图片 people (3).jpg
+2022-07-17 15:40:44.527  WARN 5508 --- [SpringContextShutdownHook] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/smartAlbum?serverTimezone=GMT%2B8, version : 1.2.5, lastPacketReceivedIdleMillis : 150640
+2022-07-17 15:40:44.527  WARN 5508 --- [SpringContextShutdownHook] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/smartAlbum?serverTimezone=GMT%2B8, version : 1.2.5, lastPacketReceivedIdleMillis : 159918
+2022-07-17 15:40:44.553  INFO 5508 --- [SpringContextShutdownHook] c.e.smartalbum.service.ImageSetService   : 筛选结束
+2022-07-17 15:40:44.581  INFO 5508 --- [SpringContextShutdownHook] c.e.s.c.listener.SessionListener         : [736, 737, 738, 739, 740, 741, 742, 743, 734, 735]
+2022-07-17 15:40:44.605  INFO 5508 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2022-07-17 15:40:44.606  INFO 5508 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-07-17 15:40:44.607  INFO 5508 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-07-17 15:40:44.608  INFO 5508 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-07-17 15:40:47.299  INFO 13936 --- [main] c.e.smartalbum.SmartAlbumApplication     : Starting SmartAlbumApplication using Java 1.8.0_202 on DESKTOP-KAIXIN with PID 13936 (D:\smartAlbum\target\classes started by Boliang Weng in D:\smartAlbum)
+2022-07-17 15:40:47.301  INFO 13936 --- [main] c.e.smartalbum.SmartAlbumApplication     : No active profile set, falling back to default profiles: default
+2022-07-17 15:40:48.139  INFO 13936 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-07-17 15:40:48.144  INFO 13936 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-17 15:40:48.144  INFO 13936 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-07-17 15:40:48.203  INFO 13936 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-17 15:40:48.203  INFO 13936 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 857 ms
+2022-07-17 15:40:48.242  INFO 13936 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2022-07-17 15:40:48.681  INFO 13936 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-07-17 15:40:49.295  INFO 13936 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-07-17 15:40:49.353  INFO 13936 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-07-17 15:40:49.458  INFO 13936 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-07-17 15:40:49.501  INFO 13936 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-07-17 15:40:49.510  INFO 13936 --- [main] c.e.smartalbum.SmartAlbumApplication     : Started SmartAlbumApplication in 2.549 seconds (JVM running for 3.178)
+2022-07-17 15:41:02.599  INFO 13936 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-17 15:41:02.600  INFO 13936 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-17 15:41:02.600  INFO 13936 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-07-17 15:41:11.947  INFO 13936 --- [http-nio-8081-exec-5] c.e.s.controller.file.FileController     : 你点击了图片 wallpaper (271).jpg
+2022-07-17 15:41:22.431  INFO 13936 --- [http-nio-8081-exec-8] c.e.s.controller.file.FileController     : 你点击了图片 people (2).jpg
+2022-07-17 15:41:49.509  INFO 13936 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 开始生成精彩时刻视频
+2022-07-17 15:41:49.520  INFO 13936 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 用户仓库 51 中的相册 人物集 不满足生成条件，已结束生成
+2022-07-17 15:41:49.520  INFO 13936 --- [scheduling-1] c.e.smartalbum.scheduled.VideoScheduled  : 生成精彩时刻视频结束
+2022-07-17 15:43:13.519  WARN 13936 --- [SpringContextShutdownHook] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/smartAlbum?serverTimezone=GMT%2B8, version : 1.2.5, lastPacketReceivedIdleMillis : 64010
+2022-07-17 15:43:13.542  INFO 13936 --- [SpringContextShutdownHook] c.e.smartalbum.service.ImageSetService   : 筛选结束
+2022-07-17 15:43:13.569  INFO 13936 --- [SpringContextShutdownHook] c.e.s.c.listener.SessionListener         : [736, 737, 738, 739, 740, 741, 742, 743, 734, 735]
+2022-07-17 15:43:13.592  INFO 13936 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2022-07-17 15:43:13.593  INFO 13936 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-07-17 15:43:13.596  INFO 13936 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-07-17 15:43:13.597  INFO 13936 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed

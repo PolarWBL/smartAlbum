@@ -90,8 +90,7 @@ function showImgInformation() {
             $('.detailedDownloadAndDelete').html(
                 "<a href='javascript:download(" + down + ")' title='下载'><i class='fa fa-download'></i></a>" +
                 "<a href='#myModal' onclick='delete_file([[" + down + "]])' data-toggle='modal' title='删除' ><i class='fa fa-trash'></i></a>" +
-                "<a href='#renameModal' onclick='rename()' data-toggle='modal' title='重命名'><i class='fa fa-credit-card'></i></a>" +
-                "<a href='#' title='收藏'><i class='fa fa-star'></i></a>");
+                "<a href='#renameModal' onclick='rename()' data-toggle='modal' title='重命名'><i class='fa fa-credit-card'></i></a>");
         },
         error: function (data) {
             console.log(data);
@@ -344,15 +343,15 @@ function upload() {
 
 //相册移除图片导航条按钮
 $("#toolItems-trash").click(function () {
-    let valArray = new Array();
-    let srcArrauy = new Array();
+    let valArray = [];
+    let srcArrauy = [];
     let deleteFileNameHtml = "";
     $('input[name="albumPicture"]:checked').each(function () {
         srcArrauy.push($(this).next().find("img")[0].src);
         valArray.push($(this).val());
     })
     for (let i = 0; i < valArray.length; i++) {
-        deleteFileNameHtml += "<div><img src='" + srcArrauy[i] + "'><p>" + valArray[i] + "</p></div>";
+        deleteFileNameHtml += "<div><img src='" + srcArrauy[i] + "' ><p>" + valArray[i] + "</p></div>";
     }
     $("#deleteFileName").html(deleteFileNameHtml);
 
