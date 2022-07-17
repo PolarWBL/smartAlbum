@@ -1,11 +1,10 @@
 package com.example.smartalbum.util;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +12,7 @@ import java.util.List;
 /**
  * @author Administrator
  */
+@Slf4j
 @Component
 public class VideoUtil {
 
@@ -109,11 +109,47 @@ public class VideoUtil {
 
 //        Process exec = Runtime.getRuntime().exec(command);
         Process exec = Runtime.getRuntime().exec(new String[]{"bash", "-c",command});
-        System.out.println(exec.getErrorStream().toString());
-        exec.getErrorStream().close();
-        exec.getInputStream().close();
+        printProcessMsg(exec);
         exec.getOutputStream().close();
         exec.waitFor();
         System.out.println("======退出了mergeVideo方法======");
+    }
+
+
+    /**
+     * 处理process输出流和错误流，防止进程阻塞，在process.waitFor();前调用
+     * @param exec
+     * @throws IOException
+     */
+    private void printProcessMsg(Process exec) throws IOException {
+        //防止ffmpeg进程塞满缓存造成死锁
+        InputStream error = exec.getErrorStream();
+        InputStream is = exec.getInputStream();
+
+        StringBuffer result = new StringBuffer();
+        String line = null;
+        try {
+            BufferedReader br = new BufferedReader(new InputStreamReader(error,"GBK"));
+            BufferedReader br2 = new BufferedReader(new InputStreamReader(is,"GBK"));
+
+            while((line = br.readLine()) != null){
+                result.append(line).append("\n");
+            }
+            log.info("FFMPEG视频转换进程错误信息："+result.toString());
+
+            result = new StringBuffer();
+            line = null;
+
+            while((line = br2.readLine()) != null){
+                result.append(line).append("\n");
+            }
+            log.info("FFMPEG视频转换进程输出内容为："+result.toString());
+        }catch (IOException e2){
+            e2.printStackTrace();
+        }finally {
+            error.close();
+            is.close();
+        }
+
     }
 }

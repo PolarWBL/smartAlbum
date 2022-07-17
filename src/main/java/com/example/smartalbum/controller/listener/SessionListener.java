@@ -138,15 +138,18 @@ public class SessionListener implements HttpSessionListener {
     }
 
     public void update(int depositoryId, List<ImageSet> imageSets, Set<Integer> resultSet) {
-        Integer id = imageSets.get(0).getId();
-        for (Integer imageId : resultSet) {
-            ImageExample imageExample = new ImageExample();
-            ImageExample.Criteria criteria1 = imageExample.createCriteria();
-            criteria1.andDepositoryIdEqualTo(depositoryId);
-            criteria1.andIdEqualTo(imageId);
-            Image image = new Image();
-            image.setImageSetId(id);
-            imageMapper.updateByExampleSelective(image, imageExample);
+        for (ImageSet imageSet : imageSets) {
+            Integer id = imageSet.getId();
+            for (Integer imageId : resultSet) {
+                ImageExample imageExample = new ImageExample();
+                ImageExample.Criteria criteria1 = imageExample.createCriteria();
+                criteria1.andDepositoryIdEqualTo(depositoryId);
+                criteria1.andIdEqualTo(imageId);
+                Image image = new Image();
+                image.setImageSetId(id);
+                imageMapper.updateByExampleSelective(image, imageExample);
+            }
         }
+
     }
 }
