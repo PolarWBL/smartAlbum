@@ -10,7 +10,7 @@
   </parent>
   <groupId>com.example</groupId>
   <artifactId>smartAlbum</artifactId>
-  <version>1.9</version>
+  <version>2.0</version>
   <name>smartAlbum</name>
   <description>智能云相册</description>
   <properties>
