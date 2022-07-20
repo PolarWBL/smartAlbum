@@ -1,7 +1,12 @@
 package com.example.smartalbum;
 
+import com.ecloud.sdk.common.auth.Credential;
+import com.ecloud.sdk.common.http.HttpConfig;
+import com.ecloud.sdk.vcr.VcrClient;
 import com.example.smartalbum.scheduled.VideoScheduled;
+import com.example.smartalbum.util.ImageCheckUtil;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
@@ -10,18 +15,34 @@ import java.io.IOException;
 @SpringBootTest
 class SmartAlbumApplicationTests {
 
-    @Resource
-    private VideoScheduled videoScheduled;
+
+    private static String ecloudAccessKey;
+    private static String ecloudSecretKey;
+
+    @Value("${ecloud.ecloudAccessKey}")
+    public void setEcloudAccessKey(String ecloudAccessKey) {
+        SmartAlbumApplicationTests.ecloudAccessKey = ecloudAccessKey;
+    }
+
+    @Value("${ecloud.ecloudSecretKey}")
+    public void setEcloudSecretKey(String ecloudSecretKey) {
+        SmartAlbumApplicationTests.ecloudSecretKey = ecloudSecretKey;
+    }
+
+    public static VcrClient getClient() {
+        HttpConfig httpConfig = new HttpConfig();
+        httpConfig.setTimeout(5);
+        Credential credential = new Credential(ecloudAccessKey, ecloudSecretKey);
+        return new VcrClient(credential, httpConfig);
+    }
+
 
     @Test
-    void contextLoads() throws IOException {
-        long start = System.currentTimeMillis();
-
-//        imageUtil.imagesToVideo(wonderfulPath + "image/", wonderfulPath + "video/");
-
-        videoScheduled.createVideo();
-
-        System.out.println("耗时 " + (System.currentTimeMillis() - start) + "ms");
+    void test01() throws IOException {
+        System.out.println("=======================> 输出 <=========================");
+        System.out.println(ecloudAccessKey);
+        System.out.println(ecloudSecretKey);
+        System.out.println("=======================================================");
     }
 
 }

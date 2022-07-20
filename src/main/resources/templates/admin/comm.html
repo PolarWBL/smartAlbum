@@ -18,9 +18,9 @@
     <!-- 侧边导航 -->
     <div class="nav topbar">
       <div class="nav-btn btn-primary hide-btn" id="topbar">
-        <a class="text-decoration-none" href="/userMain">
+        <a class="text-decoration-none" href="/admin/userMain">
           <ion-icon name="cloud-outline" style="margin: 0 9px -7px 0;font-size: 30px;"></ion-icon>
-          <strong>Smart Album</strong>
+          <strong>云尚 控制台</strong>
         </a>
         <ion-icon name="menu-outline" style="position: absolute;font-size: 30px;top: 17px;left: 193px"></ion-icon>
       </div>
@@ -52,57 +52,15 @@
         </div>
 
         <li class="nav-item text-nowrap">
-          <a aria-expanded="false" href="/userMain">
+          <a aria-expanded="false" href="/admin/userMain">
             <div class="list-icon">
               <ion-icon name="folder-outline"></ion-icon>
             </div>
-            <span>文 件</span>
-          </a>
-        </li>
-
-        <li class="nav-item text-nowrap">
-          <a aria-expanded="false" href="/album">
-            <div class="list-icon">
-              <ion-icon name="image-outline"></ion-icon>
-            </div>
-            <span>相 册</span>
-          </a>
-        </li>
-
-        <li class="nav-item text-nowrap">
-          <a aria-expanded="false" href="/recycleBin">
-            <div class="list-icon">
-              <ion-icon name="trash-outline"></ion-icon>
-            </div>
-            <span>回收站</span>
-          </a>
-        </li>
-
-      </ul>
-
-      <ul class="nav bottomProgressBar">
-        <li class="nav-item text-nowrap">
-          <a aria-expanded="false" href="#">
-            <div class="list-icon">
-              <ion-icon name="information-outline"></ion-icon>
-            </div>
-            <span>
-              [[${size}]]MB / [[${maxSize}]]MB
-              <div
-                    class="progress"
-                    style="box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);">
-                <div
-                    class="progress-bar progress-bar-striped progress-bar-animated"
-                    th:classappend="${percentage} < 75 ? 'bg-success' : 'bg-warning'"
-                    role="progressbar"
-                    th:aria-valuenow="${percentage}" aria-valuemin="0" aria-valuemax="100"
-                    th:style="'min-width: 1%;width:'+${percentage}+'%;'">
-                </div>
-              </div>
-            </span>
+            <span>待处理文件</span>
           </a>
         </li>
       </ul>
+
     </div>
     <script th:src="@{/js/nav.js}"></script>
   </div>

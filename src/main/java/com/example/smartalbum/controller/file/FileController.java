@@ -85,9 +85,20 @@ public class FileController {
         }
 
         User user = (User) session.getAttribute("userInfo");
+
+        List<String> names = deleteFiles(filenames, user);
+
+        updateService.updateUserInfo(session);
+        return ResponseMsgUtil.success("成功删除以下文件", names);
+    }
+
+
+    /**
+     * 批量删除文件
+     */
+    public List<String> deleteFiles(String[] filenames, User user){
         int depositoryId = user.getDepository().getId();
         String depositoryName = user.getDepository().getName();
-
 
         CountDownLatch countDownLatch = new CountDownLatch(filenames.length);
         List<String> names = new ArrayList<>();
@@ -95,7 +106,7 @@ public class FileController {
             names.add(filename);
             executorService.execute(()->{
                 boolean result = imageDataService.deleteImage(depositoryId, filename)
-                && ossService.deleteFile(depositoryName + "/" + filename, true);
+                        && ossService.deleteFile(depositoryName + "/" + filename, true);
                 if (!result){
                     log.error("删除 {} 时失败！",filename);
                 }
@@ -107,8 +118,7 @@ public class FileController {
         } catch (InterruptedException e) {
             log.error("删除失败，请重试!");
         }
-        updateService.updateUserInfo(session);
-        return ResponseMsgUtil.success("成功删除以下文件", names);
+        return names;
     }
 
     /**

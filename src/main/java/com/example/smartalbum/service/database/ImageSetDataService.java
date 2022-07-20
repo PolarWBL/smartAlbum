@@ -11,6 +11,7 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.Date;
@@ -50,6 +51,7 @@ public class ImageSetDataService {
      * @param depositoryId 仓库id
      * @return 操作成功的条数
      */
+    @Transactional(rollbackFor = Exception.class)
     public int updateImageSetId(int imageSetId, int depositoryId) {
         ImageExample imageExample = new ImageExample();
         imageExample.createCriteria()
@@ -67,6 +69,7 @@ public class ImageSetDataService {
      * @param depositoryId 仓库id
      * @return 操作成功的条数
      */
+    @Transactional(rollbackFor = Exception.class)
     public int insertSelective(ImageSet imageSet, int depositoryId) {
         imageSet.setDepositoryId(depositoryId);
         return imageSetMapper.insertSelective(imageSet);
@@ -79,6 +82,7 @@ public class ImageSetDataService {
      * @param depositoryId 仓库id
      * @return 操作成功的条数
      */
+    @Transactional(rollbackFor = Exception.class)
     public int updateImageSet(ImageSet imageSet, int depositoryId) {
         int imageSetId = imageSet.getId();
         imageSet.setId(null);
@@ -102,6 +106,7 @@ public class ImageSetDataService {
      * @param depositoryId 仓库id
      * @return 操作成功的条数
      */
+    @Transactional(rollbackFor = Exception.class)
     public int addImage(Set<Integer> imagesId, int imageSetId, int depositoryId) {
         int count = 0;
         Image img = new Image();
@@ -125,6 +130,7 @@ public class ImageSetDataService {
      * @param imageSetId   相册id
      * @return 操作成功的条数
      */
+    @Transactional(rollbackFor = Exception.class)
     public int removeImageForImageSet(Set<Integer> imagesId, int depositoryId, int imageSetId) {
         int count = 0;
         Image image = new Image();

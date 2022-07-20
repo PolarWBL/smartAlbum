@@ -56,5 +56,13 @@ public class RubbishService {
     }
 
 
+    @Transactional(rollbackFor = Exception.class)
+    public boolean setImageToPass(String imageId){
+        //更新照片状态
+        Image image = new Image();
+        image.setStateId(0);
+        return imageDataService.updateSelective(image, Integer.parseInt(imageId)) > 0;
+    }
+
 
 }

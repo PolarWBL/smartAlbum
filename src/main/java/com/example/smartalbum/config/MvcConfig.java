@@ -40,6 +40,8 @@ public class MvcConfig implements WebMvcConfigurer {
                 .excludePathPatterns("/", "/index.html", "/index", "/login", "/register", "/**/*.css",
                         "/**/*.js", "/**/*.png", "/**/*.jpg", "/**/*.jpeg", "/**/*.gif",
                         "/**/fonts/*", "/**/*.svg", "/druid/*", "*/druid", "/doesUserExist",
-                        "/register", "/sendcode", "/resetPassword","/recycleBin");
+                        "/register", "/sendcode", "/resetPassword","/recycleBin",
+                        "/admin/index","/admin/login"
+                );
     }
 }

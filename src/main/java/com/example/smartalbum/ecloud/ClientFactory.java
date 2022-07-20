@@ -9,6 +9,8 @@ import com.chinamobile.cmss.sdk.image.ECloudDefaultClient;
 import com.chinamobile.cmss.sdk.image.IECloudClient;
 import com.chinamobile.cmss.sdk.image.http.constant.Region;
 import com.chinamobile.cmss.sdk.image.http.signature.Credential;
+import com.ecloud.sdk.common.http.HttpConfig;
+import com.ecloud.sdk.vcr.VcrClient;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
@@ -56,5 +58,13 @@ public class ClientFactory {
         //移动云api client
         Credential credential = new Credential(ecloudAccessKey, ecloudSecretKey);
         return new ECloudDefaultClient(credential, Region.POOL_SZ);
+    }
+
+    @Bean
+    public VcrClient createVcrClient(){
+        HttpConfig httpConfig = new HttpConfig();
+        httpConfig.setTimeout(5);
+        com.ecloud.sdk.common.auth.Credential credential = new com.ecloud.sdk.common.auth.Credential(ecloudAccessKey, ecloudSecretKey);
+        return new VcrClient(credential, httpConfig);
     }
 }
