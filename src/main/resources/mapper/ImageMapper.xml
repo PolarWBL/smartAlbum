@@ -367,7 +367,7 @@
     </select>
 
     <sql id="Base_Column_List3">
-        image.id,image.name,image.url,image.url_mini,image.state_id,image.create_date,image.update_date
+        image.id,image.name,image.url,image.url_mini,image.state_id,image.create_date,image.update_date,image.depository_id
     </sql>
     <select id="selectSimpleImageListByExample" parameterType="com.example.smartalbum.domain.ImageExample"
             resultMap="BaseResultMap">

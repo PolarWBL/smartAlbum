@@ -7,7 +7,9 @@ import javax.annotation.Resource;
 import java.io.*;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Administrator
@@ -28,7 +30,8 @@ public class VideoUtil {
      * @throws InterruptedException 等待子线程完成任务的过程中，子线程被中断时发生异常
      */
     public void createMp4(String inputPath, String outputPath) throws IOException, InterruptedException {
-        System.out.println("======进入了createMp4方法======");
+        Map<Integer, String> info = new HashMap<>();
+        log.info("======开始将图片转换为视频======");
         File[] files = new File(inputPath).listFiles();
         if (files != null) {
             //图片转化为视频
@@ -40,22 +43,62 @@ public class VideoUtil {
                 img = files[i].getAbsolutePath();
                 outputVideo = outputPath + i + ".ts";
                 command = fFmpegCommandUtil.createFadeVideo(img, outputVideo);
+                info.put(i, command);
 //                processes.add(Runtime.getRuntime().exec(command));
-                processes.add(Runtime.getRuntime().exec(new String[]{"bash", "-c",command}));
+                processes.add(Runtime.getRuntime().exec(new String[]{"bash", "-c", command}));
             }
 
             //等待所有子线程执行完毕
             for (Process process : processes) {
                 //不知道啥原因，不执行这些语句的话，主线程会一直被阻塞
-                process.getErrorStream().close();
-                process.getInputStream().close();
+                printProcessMsg(process);
+                process.getOutputStream().close();
+                //等待
+                process.waitFor();
+            }
+
+            for (int i = 0; i < 10; i++) {
+                if (checkTsFile(outputPath, info)){
+                    break;
+                }
+
+            }
+            log.info("======ts文件检查完毕======");
+        } else {
+            log.error("======图片转视频失败, 找不到图片!======");
+        }
+        log.info("======图片转视频完毕======");
+    }
+
+    private boolean checkTsFile(String outputPath, Map<Integer,String> info) throws IOException, InterruptedException {
+        log.info("======检查ts文件是否全部生成======");
+        boolean result = true;
+        File[] videos = new File(outputPath).listFiles();
+        if (videos != null) {
+            List<Process> processes = new ArrayList<>();
+            for (File video : videos) {
+                if (video.length() <= 0) {
+                    result = false;
+                    String videoName = video.getName();
+                    log.info("======发现空的ts文件:{}, 正在重新生成======", videoName);
+                    String name = videoName.substring(0, videoName.lastIndexOf("."));
+                    Integer id = Integer.valueOf(name);
+                    String command = info.get(id);
+                    processes.add(Runtime.getRuntime().exec(new String[]{"bash", "-c", command}));
+                }
+            }
+
+            //等待所有子线程执行完毕
+            for (Process process : processes) {
+                //不知道啥原因，不执行这些语句的话，主线程会一直被阻塞
+                printProcessMsg(process);
                 process.getOutputStream().close();
                 //等待
                 process.waitFor();
             }
 
         }
-        System.out.println("======退出了createMp4方法======");
+        return result;
     }
 
     /**
@@ -65,7 +108,7 @@ public class VideoUtil {
      * @throws IOException 执行命令行命令时或者关闭流时发生的异常
      */
     public void createMargeTxt(String outputPath) throws IOException {
-        System.out.println("======进入了createMargeTxt方法======");
+        log.info("======开始生成合并视频列表文件: merge.txt======");
         //生成的待合成视频数组
         File[] videos = new File(outputPath).listFiles();
         if (videos != null) {
@@ -78,7 +121,7 @@ public class VideoUtil {
             //把所有生成的ts文件的完整路径写入marge.txt
             StringBuilder margeTxt = new StringBuilder();
             for (File video : videos) {
-                if (video.length() >= 0) {
+                if (video.length() > 0) {
                     if (video.getName().contains(".ts")) {
                         //构建内容
                         margeTxt.append("file '").append(video.getAbsolutePath()).append("'\n");
@@ -91,7 +134,7 @@ public class VideoUtil {
                 writer.write(String.valueOf(margeTxt));
             }
         }
-        System.out.println("======退出了createMargeTxt方法======");
+        log.info("======合并视频列表文件: merge.txt生成完毕======");
     }
 
     /**
@@ -102,7 +145,7 @@ public class VideoUtil {
      * @throws InterruptedException 等待子线程完成任务的过程中，子线程被中断时发生异常
      */
     public void mergeVideo(String outputPath) throws InterruptedException, IOException {
-        System.out.println("======进入了mergeVideo方法======");
+        log.info("======开始合并所有视频======");
         String margeTxt = outputPath + "marge.txt";
         String outputVideo = outputPath + "out.mp4";
         String command = fFmpegCommandUtil.mergeVideo(margeTxt, outputVideo);
@@ -112,43 +155,34 @@ public class VideoUtil {
         printProcessMsg(exec);
         exec.getOutputStream().close();
         exec.waitFor();
-        System.out.println("======退出了mergeVideo方法======");
+        log.info("======视频合并完成======");
     }
 
 
     /**
      * 处理process输出流和错误流，防止进程阻塞，在process.waitFor();前调用
-     * @param exec
-     * @throws IOException
      */
-    private void printProcessMsg(Process exec) throws IOException {
+    private void printProcessMsg(Process exec) {
         //防止ffmpeg进程塞满缓存造成死锁
-        InputStream error = exec.getErrorStream();
-        InputStream is = exec.getInputStream();
+        StringBuilder result = new StringBuilder();
+        String line;
+        try (InputStream error = exec.getErrorStream(); InputStream is = exec.getInputStream()) {
+            BufferedReader br = new BufferedReader(new InputStreamReader(error, "GBK"));
+            BufferedReader br2 = new BufferedReader(new InputStreamReader(is, "GBK"));
 
-        StringBuffer result = new StringBuffer();
-        String line = null;
-        try {
-            BufferedReader br = new BufferedReader(new InputStreamReader(error,"GBK"));
-            BufferedReader br2 = new BufferedReader(new InputStreamReader(is,"GBK"));
-
-            while((line = br.readLine()) != null){
+            while ((line = br.readLine()) != null) {
                 result.append(line).append("\n");
             }
-            log.info("FFMPEG视频转换进程错误信息："+result.toString());
+//            log.info("FFMPEG视频转换进程错误信息：" + result);
 
-            result = new StringBuffer();
-            line = null;
+            result = new StringBuilder();
 
-            while((line = br2.readLine()) != null){
+            while ((line = br2.readLine()) != null) {
                 result.append(line).append("\n");
             }
-            log.info("FFMPEG视频转换进程输出内容为："+result.toString());
-        }catch (IOException e2){
+//            log.info("FFMPEG视频转换进程输出内容为：" + result);
+        } catch (IOException e2) {
             e2.printStackTrace();
-        }finally {
-            error.close();
-            is.close();
         }
 
     }

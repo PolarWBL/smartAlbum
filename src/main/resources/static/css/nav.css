@@ -266,6 +266,6 @@ a:hover, a:focus {
 }
 
 .bottomProgressBar {
-    position: relative;
-    top: 430px;
+    position: absolute;
+    bottom: 15%;
 }

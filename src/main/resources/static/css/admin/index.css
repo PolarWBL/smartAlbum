@@ -39,7 +39,8 @@ body {
     width: 400px;
     height: 460px;
     border-radius: 3px;
-    background: url('/images/leftbg.png');
+    background: url('/images/adminbg.jpg');
+    background-size: contain;
     box-shadow: 0 1px 5px 0 rgba(0 0 0 0.26);
     overflow: hidden;
     z-index: 502;

@@ -70,7 +70,7 @@ let intervalId;
 //开始轮询
 function interval() {
     //轮询时间
-    intervalId = window.setInterval(showPercent, 300)
+    intervalId = window.setInterval(showPercent, 100)
 }
 
 function showPercent() {
@@ -116,6 +116,7 @@ function moveToBin() {
         },
         success: function (data) {
             console.log(data);
+            $(".viewer-close").click();
             //删除后更新DOM
             $.ajax({
                 type: "get",

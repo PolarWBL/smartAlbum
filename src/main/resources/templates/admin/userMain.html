@@ -3,15 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>我的空间</title>
+  <title>云尚控制台</title>
   <!--导入公共css-->
-  <link th:include="~{comm::css}"/>
+  <link th:include="~{admin/comm::css}"/>
   <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet"/>
   <link th:href="@{/css/jquery.toolbar.css}" rel="stylesheet"/>
-  <link th:href="@{/css/fileinput.css}" rel="stylesheet"/>
-  <link th:href="@{/css/viewer.min.css}" rel="stylesheet"/>
+<!--  <link th:href="@{/css/fileinput.css}" rel="stylesheet"/>-->
   <link th:href="@{/css/albumShow.css}" rel="stylesheet"/>
-  <link th:href="@{/css/recycleBin.css}" rel="stylesheet"/>
+  <link th:href="@{/css/admin/userMain.css}" rel="stylesheet"/>
+  <link th:href="@{/css/admin/viewer.min.css}" rel="stylesheet"/>
+
 </head>
 
 <body>
@@ -37,28 +38,30 @@
   </div>
 
   <!--导航-->
-  <div th:include="~{comm::nav}"></div>
+  <div th:include="~{admin/comm::nav}"></div>
 
   <!--模态框 删除文件提示-->
   <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">提示</h4>
+          <h4 class="modal-title">警告</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
               aria-hidden="true">&times;</span></button>
         </div>
         <div class="modal-body">
-          <p id="deleteMessage">是否彻底删除以下文件</p>
+          <p id="deleteMessage" style="color: red">是否将以下文件彻底删除?</p>
           <p id="deleteFileName" class="text"></p>
         </div>
         <form id="deleteForm" method="post">
           <div class="form-group">
+            <!--<input type="hidden" class="form-control" th:value="${path}" name="path">-->
             <input type="hidden" class="form-control" name="filenames" id="name">
+            <input type="hidden" class="form-control" name="imagesId" id="imagesId">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal" id="deleteCancel">取消</button>
-            <button id="deleteButton" type="button" class="btn btn-primary" onclick="deleteSuccess()">彻底删除</button>
+            <button id="deleteButton" type="button" class="btn btn-primary" onclick="deleteByAdmin()">删除</button>
           </div>
         </form>
       </div>
@@ -75,7 +78,8 @@
             <!--面包屑导航-->
             <div class="card-header">
               <ol style="margin-top: 10px;margin-bottom: 9px;">
-                <li class="breadcrumb-item">回收站</li>
+
+                <li class="breadcrumb-item">待处理文件</li>
               </ol>
             </div>
 
@@ -94,10 +98,10 @@
             <div class="table-responsive">
               <ul id="dowebok" class="d-flex flex-wrap">
                 <li th:each="list:${fileList}" onmouseover="dowebokMouseover(this)" onmouseout="dowebokMouseout(this)">
-                  <input type="checkbox" name="albumPicture" th:value="${list.getName()}"
-                      onclick="inputNameAlbumPicture()">
+                  <input type="hidden" th:value="${list.getId()}">
+                  <input type="checkbox" name="albumPicture" th:value="${list.getName()}" onclick="inputNameAlbumPicture()">
                   <div><img class="lazyload" data-th-original="${list.getUrl()}" data-th-src="${list.getUrlMini()}"
-                      th:src="@{/images/loading.png}" th:alt="${list.getName()}"></div>
+                      th:src="@{/images/loading.png}" th:alt="${list.getName()}" onclick="imageInformation()"></div>
                   <p th:text="${list.getName()}" th:title="${list.getName()}"></p>
                   <p th:text="${#dates.format(list.getCreateDate(),'MM-dd HH:mm')}"
                       style="width: 100%;color: #b1b1b1;"></p>
@@ -106,27 +110,25 @@
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
 
   <div class="tool-items btn-toolbar-dark" id="album_menu">
-    <a href="#myModal" class="tool-item" id="toolItems-share" title="恢复" onclick="recoverButton()" data-toggle='modal'><i class="fa fa-share"></i></a>
-    <a href="#myModal" class="tool-item" id="toolItems-trash" title="彻底删除" onclick="deleteButton()" data-toggle='modal'><i class="fa fa-trash"></i></a>
+    <a href="#myModal" class="tool-item" id="toolItems-pass" title="通过" data-toggle='modal' onclick="passButton()"><i class="fa fa-check"></i></a>
+    <a href="#myModal" class="tool-item" id="toolItems-trash" title="删除" data-toggle='modal' onclick="deleteButton()"><i class="fa fa-trash"></i></a>
     <a href="#" class="tool-item" id="toolItems-times-circle" title="取消"><i class="fa fa-times-circle"></i></a>
   </div>
 
   <!--导入公共js-->
   <div th:include="~{comm::js}"></div>
-  <script th:src="@{js/lazysizes.min.js}"></script>
-  <script th:src="@{js/viewer.min.js}"></script>
-  <script th:src="@{js/fileinput.js}"></script>
+  <script th:src="@{/js/lazysizes.min.js}"></script>
+  <script th:src="@{/js/admin/viewer.min.js}"></script>
+<!--  <script th:src="@{/js/fileinput.js}"></script>-->
   <script th:src="@{/js/album.js}"></script>
-  <script th:src="@{js/recycleBin.js}"></script>
-  <script th:src="@{js/albumShow.js}"></script>
+<!--  <script th:src="@{/js/albumShow.js}"></script>-->
+  <script th:src="@{/js/admin/userMain.js}"></script>
 
-  <script>
-      searchBarOnload();
-  </script>
 </body>
 </html>

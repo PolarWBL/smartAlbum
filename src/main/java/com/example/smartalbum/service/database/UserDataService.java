@@ -49,4 +49,15 @@ public class UserDataService {
     public int updateSelective(User user, UserExample example){
         return userMapper.updateByExampleSelective(user, example);
     }
+
+    /**
+     * 使用仓库id查用户信息
+     * 从数据库里获取用户的信息
+     */
+    public User getUserInfoByDepositoryId(int depositoryId) {
+        UserExample userExample = new UserExample();
+        userExample.createCriteria().andDepositoryIdEqualTo(depositoryId);
+        return userMapper.selectByExample(userExample).get(0);
+    }
+
 }

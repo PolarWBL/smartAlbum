@@ -6,26 +6,24 @@ function imageInformation() {
         url: 'original'
     });
     showImgMation();
-
-};
+}
 
 function showImgMation() {
     console.log(event.target.alt);
     //获取当前选中对象的属性值
     detailedName = event.target.alt;
     showImgInformation();
-
 }
 
 function showImgNextPrev() {
     setTimeout(function () {
-        console.log($(".viewer-transition .viewer-move")[0].alt);
         detailedName = $(".viewer-transition .viewer-move")[0].alt;
         showImgInformation()
     }, 10)
 }
 
 function showImgInformation() {
+    console.log("进入了albumShow的showImgInformation()方法");
     $.ajax({
         type: "get",
         url: "/file/detail",

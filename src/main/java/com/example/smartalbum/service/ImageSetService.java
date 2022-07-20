@@ -56,9 +56,12 @@ public class ImageSetService {
 
     public Map<String, Integer> matchPhone(int depositoryId , HttpSession session) {
         Map<String, Integer> map = new HashMap<>(4);
-        //查出当前用户下的所有图片
+        //查出当前用户下的所有还未放入相册中的图片
         ImageExample imageExample = new ImageExample();
-        imageExample.createCriteria().andDepositoryIdEqualTo(depositoryId);
+        imageExample.createCriteria().
+                andDepositoryIdEqualTo(depositoryId).
+                andImageSetIdEqualTo(1).
+                andStateIdNotEqualTo(3);
         List<Image> images = imageMapper.selectByExample(imageExample);
 
         List<Integer> allImageId = new ArrayList<>();

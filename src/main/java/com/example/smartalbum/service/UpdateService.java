@@ -3,6 +3,7 @@ package com.example.smartalbum.service;
 import com.example.smartalbum.domain.Depository;
 import com.example.smartalbum.domain.User;
 import com.example.smartalbum.service.database.DepositoryDataService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Administrator
  */
+@Slf4j
 @Service
 public class UpdateService {
     @Resource
@@ -28,22 +30,30 @@ public class UpdateService {
     public void updateUserInfo(HttpSession session) {
         User userInfo = (User) session.getAttribute("userInfo");
 
-        String depositoryName = userInfo.getDepository().getName();
+        Depository depository = updateUserInfoUtil(userInfo);
+
+        //更新session中的userInfo
+        userInfo.setDepository(depository);
+        session.setAttribute("userInfo", userInfo);
+    }
+
+    public Depository updateUserInfoUtil(User user) {
+        String depositoryName = user.getDepository().getName();
 
         //云端size
         long size = ossService.getDepositorySize(depositoryName);
 
         Depository depository = new Depository();
-        depository.setId(userInfo.getDepository().getId());
-        depository.setName(userInfo.getDepository().getName());
+        depository.setId(user.getDepository().getId());
+        depository.setName(user.getDepository().getName());
         depository.setSize(size + "");
-        depository.setSizeMax(userInfo.getDepository().getSizeMax());
+        depository.setSizeMax(user.getDepository().getSizeMax());
 
         //更新数据库中的size
-        depositoryDataService.updateSelective(depository, depositoryName);
+        if (depositoryDataService.updateSelective(depository, depositoryName) <= 0 ){
+            log.error("更新id为{}仓库的空间占用情况失败", depository.getId());
+        }
 
-        //更新session中的userInfo
-        userInfo.setDepository(depository);
-        session.setAttribute("userInfo", userInfo);
+        return depository;
     }
 }

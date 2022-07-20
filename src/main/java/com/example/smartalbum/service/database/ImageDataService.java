@@ -102,6 +102,7 @@ public class ImageDataService {
      * @param imageName    图片名字
      * @return Image的实例
      */
+
     public Image getImage(String imageName, int depositoryId) {
         ImageExample example = new ImageExample();
         example.createCriteria()
@@ -149,8 +150,20 @@ public class ImageDataService {
      */
     public List<Image> getSimpleImages(int id, int depositoryId) {
         ImageExample example = new ImageExample();
-        example.createCriteria().andIdEqualTo(id).andDepositoryIdEqualTo(depositoryId);
+        example.createCriteria().
+                andIdEqualTo(id).
+                andDepositoryIdEqualTo(depositoryId).
+                andStateIdNotEqualTo(3);
         return imageMapper.selectSimpleImageListByExample(example);
+    }
+
+    /**
+     * 多表查询，获取图片列表,只有图片名字、原图url，缩略图url、创建时间和修改时间,和state_id
+     */
+    public Image getImage(int imageId) {
+        ImageExample example = new ImageExample();
+        example.createCriteria().andIdEqualTo(imageId);
+        return imageMapper.selectSimpleImageListByExample(example).get(0);
     }
 
     /**
@@ -170,6 +183,43 @@ public class ImageDataService {
 
         return imageMapper.selectSimpleImageListByExample(example);
     }
+
+    /**
+     * 获取所有敏感图片
+     * 多表查询，获取图片列表,只有图片名字、原图url，缩略图url、创建时间和修改时间,和state_id
+     * @author zhuyixuan
+     */
+    public List<Image> getDangerImages() {
+        ImageExample example = new ImageExample();
+        example.createCriteria().andStateIdGreaterThan(99);
+        return imageMapper.selectSimpleImageListByExample(example);
+    }
+
+    /**
+     * 获取所有未经过审查的图片
+     * 多表查询，获取图片列表,只有图片名字、原图url，缩略图url、创建时间和修改时间,和state_id
+     */
+    public List<Image> getNormalImages() {
+        ImageExample example = new ImageExample();
+        example.createCriteria().andStateIdEqualTo(1);
+        return imageMapper.selectSimpleImageListByExample(example);
+    }
+
+    /**
+     * 审查之后更新图片的stateId
+     *
+     * @param stateId  传入的lable中的字符串,即stateId
+     * @param imageId 要更新的图片的id
+     * @return 查询的结果
+     */
+    @Transactional(rollbackFor = Exception.class)
+    public int updateAfterCensor(int imageId, int stateId) {
+        Image image = new Image();
+        image.setId(imageId);
+        image.setStateId(stateId);
+        return imageMapper.updateByPrimaryKeySelective(image);
+    }
+
 
 
 }

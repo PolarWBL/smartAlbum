@@ -77,12 +77,13 @@ public class SessionListener implements HttpSessionListener {
             HttpSessionListener.super.sessionDestroyed(se);
             return;
         }
+        if (user.getDepository() == null) {
+            HttpSessionListener.super.sessionDestroyed(se);
+            return;
+        }
         int depositoryId = user.getDepository().getId();
-
+//        log.info("获取当前session中的用户信息: {}",user);
         Map<String, Integer> result = imageSetService.matchPhone(depositoryId, session);
-
-        //销毁session
-        HttpSessionListener.super.sessionDestroyed(se);
 
         Set<String> resultTypes = result.keySet();
 
@@ -97,12 +98,14 @@ public class SessionListener implements HttpSessionListener {
 
         for (String resultType : resultTypes) {
             if (result.get(resultType) >= 10) {
-                log.info("{}", session.getAttribute(resultType));
+                log.info("智能筛选到{}中的图片id有{}",resultType ,session.getAttribute(resultType));
 
                 imageSetExample.createCriteria()
                         .andNameEqualTo(resultType)
                         .andDepositoryIdEqualTo(depositoryId);
                 imageSets = imageSetMapper.selectByExample(imageSetExample);
+
+
                 imageSetExample.clear();
 
                 //如果存在该相册 就 不生成新的
@@ -122,7 +125,9 @@ public class SessionListener implements HttpSessionListener {
                     //这些相册名要换 先判断（我这里默认用key）
                     if (imageSetMapper.insertSelective(imageSet) > 0) {
 
-                        iE1.createCriteria().andNameEqualTo(resultType);
+                        iE1.createCriteria().
+                                andNameEqualTo(resultType).
+                                andDepositoryIdEqualTo(depositoryId);
                         imgSet1 = imageSetMapper.selectByExample(iE1);
                         iE1.clear();
 
@@ -134,19 +139,21 @@ public class SessionListener implements HttpSessionListener {
                 }
             }
         }
-
+        //销毁session
+        HttpSessionListener.super.sessionDestroyed(se);
     }
 
     public void update(int depositoryId, List<ImageSet> imageSets, Set<Integer> resultSet) {
         for (ImageSet imageSet : imageSets) {
-            Integer id = imageSet.getId();
+            Integer setId = imageSet.getId();
             for (Integer imageId : resultSet) {
                 ImageExample imageExample = new ImageExample();
-                ImageExample.Criteria criteria1 = imageExample.createCriteria();
-                criteria1.andDepositoryIdEqualTo(depositoryId);
-                criteria1.andIdEqualTo(imageId);
+                imageExample.createCriteria().
+                        andImageSetIdEqualTo(1).
+                        andDepositoryIdEqualTo(depositoryId).
+                        andIdEqualTo(imageId);
                 Image image = new Image();
-                image.setImageSetId(id);
+                image.setImageSetId(setId);
                 imageMapper.updateByExampleSelective(image, imageExample);
             }
         }

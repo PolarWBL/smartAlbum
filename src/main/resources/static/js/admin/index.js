@@ -29,8 +29,7 @@ function keyListener(e) {
             nextbut.click();
         else if (document.activeElement.id === "password") {
             document.getElementById("login").click();
-        }else
-            document.getElementById("register").click();
+        }
         return false;
     }
 }
@@ -52,19 +51,20 @@ rememberP.addEventListener('change',function () {
 
 //验证账号
 nextbut.addEventListener("click", function () {
-    let username = document.getElementById("username").value;
-    if (check(username)) {
-        toLogin();
-    } else {
-        document.getElementById("register_username").value = username;
-
-        rwenzi.innerText = "注册";
-        register.innerText = "注册";
-        document.getElementById("reg_pwd").innerText = "密码";
-        document.getElementById("register-form").action = "/register";
-
-        toRegister();
-    }
+    toLogin();
+    //let username = document.getElementById("username").value;
+    // if (check(username)) {
+    //     toLogin();
+    // } else {
+    //     document.getElementById("register_username").value = username;
+    //
+    //     rwenzi.innerText = "注册";
+    //     register.innerText = "注册";
+    //     document.getElementById("reg_pwd").innerText = "密码";
+    //     document.getElementById("register-form").action = "/register";
+    //
+    //     toRegister();
+    // }
 });
 
 //验证主要内容
@@ -103,7 +103,7 @@ fanhui.onclick = function () {
         login.removeAttribute("class");
         login.setAttribute("class", "login flag1");
     }
-    wenzi.innerText = "欢迎进入云尚相册！";
+    wenzi.innerText = "欢迎使用云尚后台！";
     document.onkeydown = onkeydownTab;
     document.getElementById("username").onkeydown = keyListener;
     return false;

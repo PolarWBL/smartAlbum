@@ -164,19 +164,19 @@ $("#toolItems-trash").on("click", deleteFile);
 
 
 function deleteFile() {
-    let valArray = new Array();
-    let srcArrauy = new Array();
+    let valArray = [];
+    let srcArray = [];
     let val;
     let deleteFileNameHtml = "";
     $('input[name="albumPicture"]:checked').each(function () {
         val = $(this).val();
-        srcArrauy.push($(this).next().find("img")[0].src);
+        srcArray.push($(this).next().find("img")[0].src);
         valArray.push(val);
     })
 
     $("#name").val(valArray);
     for (let i = 0; i < valArray.length; i++) {
-        deleteFileNameHtml += "<div><img src='" + srcArrauy[i] + "'><p>" + valArray[i] + "</p></div>";
+        deleteFileNameHtml += "<div><img src='" + srcArray[i] + "'><p>" + valArray[i] + "</p></div>";
     }
     $("#deleteFileName").html(deleteFileNameHtml);
 }
