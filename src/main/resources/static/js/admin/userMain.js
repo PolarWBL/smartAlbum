@@ -1,3 +1,4 @@
+
 //移到回收站提交按钮
 function deleteByAdmin() {
     $("#deleteCancel").click();
@@ -207,6 +208,55 @@ function passByAdmin() {
         },
         error: function (data) {
             console.log(data);
+        }
+    })
+
+}
+
+//拉取文件
+function CheckNow(){
+    // $("#checkCheck").click();
+    $(".fullpage-wrapper").fadeIn(300);
+    let filenames = [];
+    filenames.push($('#name').val());
+    let imagesId = [];
+    imagesId.push($('#imagesId').val());
+    console.log(filenames.toString());
+    $.ajax({
+        type: "post",
+        url: "/imageCheck/check",
+        data: {
+            imagesId: imagesId.toString()
+        },
+        success: function (json) {
+            $(".fullpage-wrapper").fadeOut(50);
+            let data = JSON.parse(json)
+            if(data.code===1){
+                swal({
+                    title: "成功",
+                    text: data.msg,
+                    icon: "success",
+                    button: {
+                        value: "好的"
+                    },
+                }).then((value) => {
+                    window.open("userMain","_parent");
+                })
+            } else {
+                let msg = data.msg;
+                console.log(msg);
+                swal({
+                    title:"警告",
+                    text: data.msg,
+                    icon:"error",
+                    button: "我知道了",
+                });
+            }
+
+        },
+        error: function () {
+            $(".fullpage-wrapper").fadeOut(50);
+            swal("错误", "出错了，请联系管理员！", "error");
         }
     })
 

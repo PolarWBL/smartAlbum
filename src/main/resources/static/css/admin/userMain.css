@@ -274,6 +274,7 @@
     transition: all .3s;
 }
 
+
 .container2 .add1::after {
     content: "";
     position: absolute;

@@ -63,7 +63,7 @@ public class VideoScheduled {
     /**
      * 初始运行项目24小时后开始执行，上一次执行完毕时间点之后24小时后再执行（每天执行一次）
      */
-    @Scheduled(initialDelay = 1000 * 60 * 50, fixedRate = 1000 * 60 * 60 * 2)
+    @Scheduled(initialDelay = 1000 * 60 * 45, fixedRate = 1000 * 60 * 60 * 2)
     public void createVideo() throws IOException {
 
         log.info("开始生成精彩时刻视频");
