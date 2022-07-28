@@ -11,7 +11,6 @@ import com.ecloud.sdk.vcr.model.ModerationQueryReq;
 import com.ecloud.sdk.vcr.model.ModerationResultBody;
 import com.example.smartalbum.domain.Image;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -37,8 +36,9 @@ public class ImageCheckUtil {
 
         ImageBatchModerationReq req = new ImageBatchModerationReq();
         req.setCallBack("www.callback.com");
-        req.setScenesId("");
+        req.setScenesId("71op0vbok0wy");
         req.setUrls(modelList);
+
         ECloudHttpResponse<List<ModerationResultBody>> listBotHttpResponse = client.imageBatchCensor(req);
         if (!"0".equals(listBotHttpResponse.getErrorCode())) {
             log.error("图片审核提交失败! {}",JsonUtils.toJSON(listBotHttpResponse));

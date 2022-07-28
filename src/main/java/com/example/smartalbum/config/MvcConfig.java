@@ -41,7 +41,7 @@ public class MvcConfig implements WebMvcConfigurer {
                         "/**/*.js", "/**/*.png", "/**/*.jpg", "/**/*.jpeg", "/**/*.gif",
                         "/**/fonts/*", "/**/*.svg", "/druid/*", "*/druid", "/doesUserExist",
                         "/register", "/sendcode", "/resetPassword","/recycleBin",
-                        "/admin/index","/admin/login"
+                        "/admin/index","/admin/login","/imageCheck/*"
                 );
     }
 }

@@ -103,7 +103,7 @@ public class ImageSetService {
                     animal.add(image);
                     break;
                 default:
-                    log.info("{}", s);
+//                    log.info("{}", s);
                     break;
             }
         }

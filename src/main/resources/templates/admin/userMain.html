@@ -40,6 +40,7 @@
   <!--导航-->
   <div th:include="~{admin/comm::nav}"></div>
 
+
   <!--模态框 删除文件提示-->
   <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
     <div class="modal-dialog" role="document">
@@ -78,9 +79,16 @@
             <!--面包屑导航-->
             <div class="card-header">
               <ol style="margin-top: 10px;margin-bottom: 9px;">
-
-                <li class="breadcrumb-item">待处理文件</li>
+                <li class="breadcrumb-item">待处理文件
+                  <input type="button" value="立即检测" onclick="CheckNow();" id="checkCheck"
+                         class="btn btn-primary" style="right:20px;top:15px;position:absolute"/>
+<!--                  <button id="censor" type="button" class="btn btn-primary" onclick="censorNow()"-->
+<!--                          style="right:20px;top:15px;position:absolute">拉取文件</button>-->
+                </li>
               </ol>
+
+              </div>
+
             </div>
 
             <!--全选和排序-->
@@ -125,6 +133,7 @@
   <div th:include="~{comm::js}"></div>
   <script th:src="@{/js/lazysizes.min.js}"></script>
   <script th:src="@{/js/admin/viewer.min.js}"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!--  <script th:src="@{/js/fileinput.js}"></script>-->
   <script th:src="@{/js/album.js}"></script>
 <!--  <script th:src="@{/js/albumShow.js}"></script>-->
