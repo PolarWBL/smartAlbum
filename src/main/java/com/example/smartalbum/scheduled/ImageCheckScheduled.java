@@ -27,7 +27,7 @@ public class ImageCheckScheduled {
     private VcrClient vcrClient;
 
 
-    @Scheduled(initialDelay = 1000 * 60 , fixedRate = 1000 * 60 * 60 * 2)
+    @Scheduled(initialDelay = 1000 * 60 * 10, fixedRate = 1000 * 60 * 60 * 2)
     public void submitCheck() {
         if (resultBodies != null && !resultBodies.isEmpty()) {
             log.info("结果集还未处理完毕, 正在等待处理...");
@@ -39,6 +39,7 @@ public class ImageCheckScheduled {
 //        log.info(imageList.toString());
         if (imageList.isEmpty()) {
             log.info("未发现新的未审核图片");
+            sign = 0;
             return;
         }
         if (imageList.size() > 90) {
@@ -48,7 +49,7 @@ public class ImageCheckScheduled {
         resultBodies = imageCheckUtil.asyncCheck(imageList, vcrClient);
     }
 
-    @Scheduled(initialDelay = 1000 * 60 * 5, fixedRate = 1000 * 60 * 60 * 2)
+    @Scheduled(initialDelay = 1000 * 60 * 15, fixedRate = 1000 * 60 * 60 * 2)
     public void resultCheck(){
         int count = 0;
         int red = 0;

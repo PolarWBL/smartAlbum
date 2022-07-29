@@ -61,7 +61,7 @@ public class ImageCheckController {
         List<ImageModerationReq> imageModerationReqs = new ArrayList<>();
         for (Image image : imageList) {
             ImageModerationReq imageModerationReq = new ImageModerationReq();
-            imageModerationReq.setImage(image.getUrlMini());
+            imageModerationReq.setUrl(image.getUrlMini());
             imageModerationReq.setDataId(image.getId().toString());
             imageModerationReq.setScenesId("71op0vbok0wy");
             imageModerationReq.setCheckGc("1");
@@ -79,20 +79,24 @@ public class ImageCheckController {
                     vcrClient.imageCensor(imageModerationReq);
             ModerationResultBody resultBody = moderationResultBody.getBody();
 
-            int imageId = Integer.parseInt(resultBody.getDataId());
-            int stateId = resultBody.getLabels().get(0).getLabel();
-            int res;
-            if (stateId != 200100) {
-                res = imageDataService.updateAfterCensor(imageId, stateId);
-                log.info("id为 {} 的图片的违规代码为: {}", imageId, stateId);
-                red++;
+            if ("0".equals(moderationResultBody.getErrorCode())){
+                int imageId = Integer.parseInt(resultBody.getDataId());
+                int stateId = resultBody.getLabels().get(0).getLabel();
+                int res;
+                if (stateId != 200100) {
+                    res = imageDataService.updateAfterCensor(imageId, stateId);
+                    log.info("id为 {} 的图片的违规代码为: {}", imageId, stateId);
+                    red++;
+                } else {
+                    res = imageDataService.updateAfterCensor(imageId, 0);
+                }
+                if (res > 0) {
+                    count += res;
+                } else {
+                    log.error("更新id为{}的图片信息时失败!", imageId);
+                }
             }else {
-                res = imageDataService.updateAfterCensor(imageId, 0);
-            }
-            if (res > 0) {
-                count += res;
-            }else {
-                log.error("更新id为{}的图片信息时失败!", imageId);
+                log.error("errorCode:{}, errorMessage:{}", moderationResultBody.getErrorCode(), moderationResultBody.getErrorMessage());
             }
         }
         String msg = "本次检测了[" + count + "]张图片, 新增[" + red + "]张疑似违规图片";
