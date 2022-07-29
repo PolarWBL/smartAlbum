@@ -15,36 +15,7 @@ function deleteByAdmin() {
             imagesId: imagesId.toString()
         },
         success: function (data) {
-            // console.log(data);
-            //删除后更新DOM
-            $.ajax({
-                type: "get",
-                url: "/admin/list",
-                success: function (data) {
-                    $(".fullpage-wrapper").fadeOut(50);
-                    let jsonData = JSON.parse(data);
-                    console.log(jsonData)
-                    let dowebokDeleteHtml = "";
-                    for (let i = 0; i < jsonData.data.length; i++) {
-                        let oldTime = (new Date(jsonData.data[i].createDate)).getTime();
-                        let curTime = new Date(oldTime).format("MM-dd hh:mm");
-                        dowebokDeleteHtml += "<li onmouseover='dowebokMouseover(this)' onmouseout='dowebokMouseout(this)'>" +
-                            "<input type='hidden' value='"+jsonData.data[i].id+"'>" +
-                            "<input type='checkbox' name='albumPicture' value='" + jsonData.data[i].name + "' onclick='inputNameAlbumPicture()'>" +
-                            "  <div><img class='lazyload'   data-th-original='" + jsonData.data[i].url + "' data-th-src='" + jsonData.data[i].urlMini + "'  src='" + jsonData.data[i].urlMini + "' alt='" + jsonData.data[i].name + "' onclick='imageInformation()'></div>" +
-                            "<p title='" + jsonData.data[i].name + "'>" + jsonData.data[i].name + "</p><p  style='width: 100%;color: #b1b1b1;'>" + curTime + "</p></li>"
-                    }
-                    $("#dowebok").html(dowebokDeleteHtml);
-
-                    if ($("#selectAll").is(":checked"))
-                        $("#selectAll").click();
-                    let seleCount = $("input[name='albumPicture']").length;
-                    $("#selectCount").text("共" + seleCount + "项");
-                },
-                error: function (data) {
-                    console.log(data);
-                }
-            });
+            window.open("userMain","_parent");
         },
         error: function (data) {
             console.log(data);
@@ -175,36 +146,7 @@ function passByAdmin() {
             imagesId: imagesId.toString()
         },
         success: function (data) {
-            // console.log(data);
-            //删除后更新DOM
-            $.ajax({
-                type: "get",
-                url: "/admin/list",
-                success: function (data) {
-                    $(".fullpage-wrapper").fadeOut(50);
-                    let jsonData = JSON.parse(data);
-                    console.log(jsonData)
-                    let dowebokDeleteHtml = "";
-                    for (let i = 0; i < jsonData.data.length; i++) {
-                        let oldTime = (new Date(jsonData.data[i].createDate)).getTime();
-                        let curTime = new Date(oldTime).format("MM-dd hh:mm");
-                        dowebokDeleteHtml += "<li onmouseover='dowebokMouseover(this)' onmouseout='dowebokMouseout(this)'>" +
-                            "<input type='hidden' value='"+jsonData.data[i].id+"'>" +
-                            "<input type='checkbox' name='albumPicture' value='" + jsonData.data[i].name + "' onclick='inputNameAlbumPicture()'>" +
-                            "  <div><img class='lazyload'   data-th-original='" + jsonData.data[i].url + "' data-th-src='" + jsonData.data[i].urlMini + "'  src='" + jsonData.data[i].urlMini + "' alt='" + jsonData.data[i].name + "' onclick='imageInformation()'></div>" +
-                            "<p title='" + jsonData.data[i].name + "'>" + jsonData.data[i].name + "</p><p  style='width: 100%;color: #b1b1b1;'>" + curTime + "</p></li>"
-                    }
-                    $("#dowebok").html(dowebokDeleteHtml);
-
-                    if ($("#selectAll").is(":checked"))
-                        $("#selectAll").click();
-                    let seleCount = $("input[name='albumPicture']").length;
-                    $("#selectCount").text("共" + seleCount + "项");
-                },
-                error: function (data) {
-                    console.log(data);
-                }
-            });
+            window.open("userMain","_parent");
         },
         error: function (data) {
             console.log(data);

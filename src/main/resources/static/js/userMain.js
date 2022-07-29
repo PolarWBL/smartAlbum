@@ -32,30 +32,7 @@ function upload() {
             // setTimeout(function (){location.reload();},100);
             console.log(data);
             //上传后添加DOM
-            $.ajax({
-                type: "get",
-                url: "/file/list",
-                success: function (data) {
-                    $(".fullpage-wrapper").fadeOut(50);
-                    let jsonDate = JSON.parse(data);
-                    console.log(jsonDate)
-                    let dowebokDeleteHtml = "";
-                    for (let i = 0; i < jsonDate.data.length; i++) {
-                        let oldTime = (new Date(jsonDate.data[i].createDate)).getTime();
-                        let curTime = new Date(oldTime).format("MM-dd hh:mm");
-                        dowebokDeleteHtml += "<li onmouseover='dowebokMouseover(this)' onmouseout='dowebokMouseout(this)'><input type='checkbox' name='albumPicture' value='" + jsonDate.data[i].name + "' onclick='inputNameAlbumPicture()'>" +
-                            "  <div><img class='lazyload'   data-th-original='" + jsonDate.data[i].url + "' data-th-src='" + jsonDate.data[i].urlMini + "'  src='" + jsonDate.data[i].urlMini + "' alt='" + jsonDate.data[i].name + "' onclick='imageInformation()'></div>" +
-                            "<p title='" + jsonDate.data[i].name + "'>" + jsonDate.data[i].name + "</p><p  style='width: 100%;color: #b1b1b1;'>" + curTime + "</p></li>"
-                    }
-                    $("#dowebok").html(dowebokDeleteHtml);
-
-                    let seleCount = $("input[name='albumPicture']").length;
-                    $("#selectCount").text("共" + seleCount + "项");
-                },
-                error: function (data) {
-                    console.log(data);
-                }
-            });
+            window.open("userMain","_parent");
         },
         error: function (data) {
             console.log(data);
@@ -118,32 +95,7 @@ function moveToBin() {
             console.log(data);
             $(".viewer-close").click();
             //删除后更新DOM
-            $.ajax({
-                type: "get",
-                url: "/file/list",
-                success: function (data) {
-                    $(".fullpage-wrapper").fadeOut(50);
-                    let jsonDate = JSON.parse(data);
-                    console.log(jsonDate)
-                    let dowebokDeleteHtml = "";
-                    for (let i = 0; i < jsonDate.data.length; i++) {
-                        let oldTime = (new Date(jsonDate.data[i].createDate)).getTime();
-                        let curTime = new Date(oldTime).format("MM-dd hh:mm");
-                        dowebokDeleteHtml += "<li onmouseover='dowebokMouseover(this)' onmouseout='dowebokMouseout(this)'><input type='checkbox' name='albumPicture' value='" + jsonDate.data[i].name + "' onclick='inputNameAlbumPicture()'>" +
-                            "  <div><img class='lazyload'   data-th-original='" + jsonDate.data[i].url + "' data-th-src='" + jsonDate.data[i].urlMini + "'  src='" + jsonDate.data[i].urlMini + "' alt='" + jsonDate.data[i].name + "' onclick='imageInformation()'></div>" +
-                            "<p title='" + jsonDate.data[i].name + "'>" + jsonDate.data[i].name + "</p><p  style='width: 100%;color: #b1b1b1;'>" + curTime + "</p></li>"
-                    }
-                    $("#dowebok").html(dowebokDeleteHtml);
-
-                    if ($("#selectAll").is(":checked"))
-                        $("#selectAll").click();
-                    let seleCount = $("input[name='albumPicture']").length;
-                    $("#selectCount").text("共" + seleCount + "项");
-                },
-                error: function (data) {
-                    console.log(data);
-                }
-            });
+            window.open("userMain","_parent");
         },
         error: function (data) {
             console.log(data);

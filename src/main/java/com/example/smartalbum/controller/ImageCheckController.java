@@ -64,7 +64,7 @@ public class ImageCheckController {
             imageModerationReq.setImage(image.getUrlMini());
             imageModerationReq.setDataId(image.getId().toString());
             imageModerationReq.setScenesId("71op0vbok0wy");
-            imageModerationReq.setCheckGc("0");
+            imageModerationReq.setCheckGc("1");
             imageModerationReqs.add(imageModerationReq);
         }
         return ResponseMsgUtil.success(updateImages(imageModerationReqs));

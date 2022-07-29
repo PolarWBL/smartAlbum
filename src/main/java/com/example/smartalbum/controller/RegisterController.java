@@ -41,6 +41,9 @@ public class RegisterController {
     @ResponseBody
     @GetMapping("/sendcode")
     public String sendEmailCode(@RequestParam("mail") String mail) {
+        if (mail == null) {
+            return ResponseMsgUtil.failure("请输入邮箱");
+        }
         if (!mailService.checkMailFormat(mail)) {
             return ResponseMsgUtil.failure("邮箱格式错误");
         }

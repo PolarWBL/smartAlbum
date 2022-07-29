@@ -3,13 +3,10 @@ package com.example.smartalbum;
 import com.ecloud.sdk.common.auth.Credential;
 import com.ecloud.sdk.common.http.HttpConfig;
 import com.ecloud.sdk.vcr.VcrClient;
-import com.example.smartalbum.scheduled.VideoScheduled;
-import com.example.smartalbum.util.ImageCheckUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import javax.annotation.Resource;
 import java.io.IOException;
 
 @SpringBootTest
