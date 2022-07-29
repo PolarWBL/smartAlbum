@@ -64,10 +64,9 @@ public class ImageCheckScheduled {
         int index = 0;
         for (ModerationResultBody resultBody : result) {
             int imageId = Integer.parseInt(resultBody.getDataId());
-            int stateId = resultBody.getLabels().get(0).getLabel();
             String status = resultBody.getStatus();
-
             if ("0".equals(status)) {
+                int stateId = resultBody.getLabels().get(0).getLabel();
                 int res;
                 if (stateId != 200100) {
                     res = imageDataService.updateAfterCensor(imageId, stateId);
@@ -82,7 +81,7 @@ public class ImageCheckScheduled {
                     log.error("更新id为{}的图片信息时失败!", imageId);
                 }
             }else {
-                log.info("id为 {} 的图片正在检测中......已加入到新的查询队列", imageId);
+                log.info("id为 {} 的图片检测失败, errorCode:{}......已加入到新的查询队列", imageId, status);
                 uncheckedImages.add(resultBodies.get(index));
             }
             index++;
