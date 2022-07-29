@@ -114,30 +114,6 @@ public class AdminController {
     @PostMapping("/delete")
     public String fileDelete(@RequestParam("imagesId") String[] imagesId) {
 
-//        for (String imageId : imagesId) {
-//            String name = imageDataService.getImage(Integer.parseInt(imageId)).getName();
-//            if (name == null) {
-//                log.error("删除图片时未找到id为{}的图片", imageId);
-//            } else {
-//                names.add(name);
-//            }
-//        }
-//        log.info("要删除的图片名称: {}", names);
-//        List<String> deleteNames = new ArrayList<>();
-//
-//        for (String name : names) {
-//            Image image = imageDataService.getImage(Integer.parseInt(imagesId[0]));
-//
-//            Integer depositoryId = image.getDepositoryId();
-//
-//            User user = userDataService.getUserInfoByDepositoryId(depositoryId);
-//
-//            user = userDataService.getUserInfoByName(user.getUsername()).get(0);
-//
-//            deleteNames.addAll(fileController.deleteFiles(new String[]{name}, user));
-//
-//            updateService.updateUserInfoUtil(user);
-//        }
         List<String> deleteNames = new ArrayList<>();
 
         for (String imageId : imagesId) {
