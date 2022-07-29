@@ -49,8 +49,6 @@ public class ImageCheckUtil {
 
     }
 
-
-
     public List<ModerationResultBody> getResult(List<ModerationResultBody> bodies, VcrClient client){
         log.info("开始获取图片审核结果");
         ModerationQueryReq req = new ModerationQueryReq();

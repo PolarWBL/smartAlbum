@@ -17,11 +17,13 @@ import com.example.smartalbum.util.ResponseMsgUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
@@ -111,31 +113,46 @@ public class AdminController {
     @ResponseBody
     @PostMapping("/delete")
     public String fileDelete(@RequestParam("imagesId") String[] imagesId) {
-        List<String> names = new ArrayList<>();
+
+//        for (String imageId : imagesId) {
+//            String name = imageDataService.getImage(Integer.parseInt(imageId)).getName();
+//            if (name == null) {
+//                log.error("删除图片时未找到id为{}的图片", imageId);
+//            } else {
+//                names.add(name);
+//            }
+//        }
+//        log.info("要删除的图片名称: {}", names);
+//        List<String> deleteNames = new ArrayList<>();
+//
+//        for (String name : names) {
+//            Image image = imageDataService.getImage(Integer.parseInt(imagesId[0]));
+//
+//            Integer depositoryId = image.getDepositoryId();
+//
+//            User user = userDataService.getUserInfoByDepositoryId(depositoryId);
+//
+//            user = userDataService.getUserInfoByName(user.getUsername()).get(0);
+//
+//            deleteNames.addAll(fileController.deleteFiles(new String[]{name}, user));
+//
+//            updateService.updateUserInfoUtil(user);
+//        }
+        List<String> deleteNames = new ArrayList<>();
 
         for (String imageId : imagesId) {
-            String name = imageDataService.getImage(Integer.parseInt(imageId)).getName();
-            if (name == null) {
-                log.error("删除图片时未找到id为{}的图片", imageId);
-            } else {
-                names.add(name);
-            }
+            Image image = imageDataService.getImage(Integer.parseInt(imageId));
+
+            Integer depositoryId = image.getDepositoryId();
+
+            User user = userDataService.getUserInfoByDepositoryId(depositoryId);
+
+            user = userDataService.getUserInfoByName(user.getUsername()).get(0);
+
+            deleteNames.addAll(fileController.deleteFiles(new String[]{image.getName()}, user));
+
+            updateService.updateUserInfoUtil(user);
         }
-        log.info("要删除的图片名称: {}", names);
-
-        Image image = imageDataService.getImage(Integer.parseInt(imagesId[0]));
-
-        Integer depositoryId = image.getDepositoryId();
-
-        User user = userDataService.getUserInfoByDepositoryId(depositoryId);
-
-        user = userDataService.getUserInfoByName(user.getUsername()).get(0);
-
-        String[] filenames = names.toArray(new String[0]);
-
-        List<String> deleteNames = fileController.deleteFiles(filenames, user);
-
-        updateService.updateUserInfoUtil(user);
 
         return ResponseMsgUtil.success("成功删除以下文件", deleteNames);
     }
